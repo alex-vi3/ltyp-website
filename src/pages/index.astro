@@ -1,8 +1,13 @@
 ---
+import Carousel from '../components/Carousel.astro';
 import Layout from '../layouts/Layout.astro';
-
+import Presentation from '../components/Presentation.astro';
 ---
 
 <Layout>
-
+    <div class="flex items-center">
+        <div class="w-100 h-100"></div>
+        <Carousel client:load/>
+        <Presentation/>
+    </div>
 </Layout>

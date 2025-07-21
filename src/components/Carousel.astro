@@ -1,0 +1,66 @@
+---
+import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
+import type { AstroSwiperType } from "astro-swiper";
+
+const astroSwiperOptions: AstroSwiperType = {
+  options: {
+    loop: true,
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    slidesPerView:"auto",
+
+  },
+};
+---
+<div class="flex relative" >
+  <div>
+    <Swiper options={astroSwiperOptions.options} class="not-content">
+      <!-- Additional required wrapper -->
+      <SwiperWrapper>
+        <!-- Slides -->
+        <SwiperSlide>
+          <img src="https://picsum.photos/1024/1012?nb=1" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://picsum.photos/1024/1012?nb=2" alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src="https://picsum.photos/1024/1012?nb=3" alt="" />
+        </SwiperSlide>
+      </SwiperWrapper>
+    
+      <!-- navigation buttons -->
+      <SwiperButtonPrev />
+      <SwiperButtonNext />
+    </Swiper>
+  </div>
+  <div class="bg-red-700 absolute top-[-20px] left-[-20px] w-40 h-30 rounded-sm"/>
+  <div class="bg-red-700 absolute bottom-[-20px] right-[-20px] w-40 h-30 rounded-sm"/>
+</div>
+
+
+
+
+<style>
+  .swiper {
+    max-width: 700px;
+    aspect-ratio: 16/9;
+    border-radius: 10px;
+  }
+
+  img {
+    width: 100%;
+  }
+  .swiper-button-next,
+.swiper-button-prev {
+    right:10px;
+    padding: 30px;
+    color: white;
+}
+
+
+
+
+</style>
