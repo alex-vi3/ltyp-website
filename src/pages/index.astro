@@ -2,12 +2,15 @@
 import Carousel from '../components/Carousel.astro';
 import Layout from '../layouts/Layout.astro';
 import Presentation from '../components/Presentation.astro';
+import Informations from '../components/Informations.astro';
 ---
 
 <Layout>
-    <div class="flex items-center">
-        <div class="w-100 h-100"></div>
-        <Carousel client:load/>
+    <div class="flex items-center justify-center font-title font-thin gap-20 px-20">
+        <Carousel/>
         <Presentation/>
     </div>
+    <Informations/>
+</div>
 </Layout>
+

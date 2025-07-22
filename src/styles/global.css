@@ -10,7 +10,7 @@ html {
     rgb(19, 20, 20) 50%,
     rgb(0, 0, 0) 100%
   );
-  font-family: "Exo 2", sans-serif;
+  font-family: "Special Gothic Expanded One", sans-serif;
 }
 
 /** Light theme particles on home page */
@@ -34,4 +34,20 @@ html {
 .animate.show {
   opacity: 1;
   transform: translateY(0);
+}
+
+@theme {
+  --font-title: "Special Gothic Expanded One", sans-serif;
+}
+
+@layer base {
+  h1 {
+    font-size: var(--text-2xl);
+  }
+  h2 {
+    font-size: var(--text-xl);
+  }
+  p {
+    font-family: "Montserrat", sans-serif;
+  }
 }
