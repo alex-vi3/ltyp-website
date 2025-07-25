@@ -1,16 +1,20 @@
 ---
 import Carousel from '../components/Carousel.astro';
 import Layout from '../layouts/Layout.astro';
+import MainTitle from '../components/MainTitle.astro';
 import Presentation from '../components/Presentation.astro';
-import Informations from '../components/Informations.astro';
+import Cards from '../components/Cards.astro';
 ---
 
 <Layout>
-    <div class="flex items-center justify-center font-title font-thin gap-20 px-20">
-        <Carousel/>
+    <div class="flex flex-col gap-20">
+        <div class="flex items-center justify-center font-title font-thin gap-20 px-20">
+            <Carousel/>
+            <MainTitle/>
+        </div>
         <Presentation/>
+        <Cards/>
     </div>
-    <Informations/>
 </div>
 </Layout>
 

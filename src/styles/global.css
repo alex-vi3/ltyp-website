@@ -3,12 +3,11 @@
 html {
   overflow-y: scroll;
   color-scheme: light;
-  background: #241919;
   background: linear-gradient(
     90deg,
-    rgb(0, 0, 0) 0%,
+    rgb(37, 14, 14) 0%,
     rgb(19, 20, 20) 50%,
-    rgb(0, 0, 0) 100%
+    rgb(58, 21, 21) 100%
   );
   font-family: "Special Gothic Expanded One", sans-serif;
 }
