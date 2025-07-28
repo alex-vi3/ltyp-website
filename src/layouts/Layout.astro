@@ -1,6 +1,5 @@
 ---
 import Header from '../components/Header.astro';
-import Footer from '../components/Footer.astro';
 import '../styles/global.css'
 
 ---
@@ -11,19 +10,12 @@ import '../styles/global.css'
 		<meta name="viewport" content="width=device-width" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&family=Special+Gothic+Condensed+One&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Condensed+One&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
 		<link rel="icon" type="image/svg+xml" href="/logo.png" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Le Trait Yainville Pongiste</title>
 	</head>
 	<body>
-		<!-- Light Mode: Particles -->
-		<div class='absolute inset-0 block z-0'>
-			<div id='particles3' class='fixed inset-0 '/>
-		</div>
-
-		<script is:inline src="/js/bg.js"></script>	
-
 		<Header/>
 		<slot/>
 		
