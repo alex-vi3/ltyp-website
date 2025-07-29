@@ -1,0 +1,24 @@
+---
+import Button from "./Button.astro";
+
+
+const { title, description, imageUrl, linkUrl, reverse } = Astro.props;
+---
+<div class=`background-pattern flex ${reverse ? "flex-row-reverse" : "flex-row"} bg-linear-to-r from-red-800 to-red-700 items-center px-100 py-10 gap-50`>
+    <div class="flex flex-col flex-1 gap-5">
+        <h1 class="text-white">{title}</h1>
+        <p class="text-lg text-white">{description}</p>
+        <Button text="Plus d'infos" link={linkUrl}/>
+    </div>
+    <div>
+      <img class="max-h-120 z-100 max-w-120" src={imageUrl}>
+    </div>
+</div>
+
+<style>
+ .background-pattern{
+  z-index:0;
+  background-color: #a82424;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='%23750a0a' fill-opacity='0.5' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
+ }
+</style>
