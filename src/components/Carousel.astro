@@ -1,6 +1,7 @@
 ---
-import { Swiper, SwiperWrapper, SwiperSlide, SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
+import { Swiper, SwiperWrapper, SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
 import type { AstroSwiperType } from "astro-swiper";
+import CarouselItem from "./CarouselItem.astro";
 
 const astroSwiperOptions: AstroSwiperType = {
   options: {
@@ -14,31 +15,20 @@ const astroSwiperOptions: AstroSwiperType = {
 };
 ---
 <div class="flex flex-col m-10 gap-6">
-  <h1 class="text-white ">Dernières actualités</h1>
-  <div class="flex flex-col relative w-150">
+  <h1 class="text-white">Dernières actualités</h1>
+  <div class="flex flex-col relative w-180">
     <div>
-      <Swiper options={astroSwiperOptions.options} class="not-content">
-        <!-- Additional required wrapper -->
-        <SwiperWrapper>
-          <!-- Slides -->
-          <SwiperSlide>
-            <img src="https://picsum.photos/1024/1012?nb=1" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://picsum.photos/1024/1012?nb=2" alt="" />
-          </SwiperSlide>
-          <SwiperSlide>
-            <img src="https://picsum.photos/1024/1012?nb=3" alt="" />
-          </SwiperSlide>
+      <Swiper options={astroSwiperOptions.options} >
+        <SwiperWrapper >
+          <CarouselItem title="Titre de mon article 1 qui est plus long que l'autre" imageSrc="/images/illu-1.jpg" link="/actualites"/>
+          <CarouselItem title="Titre de mon article 2" imageSrc="/images/illu-2.jpg" link="/actualites"/>
         </SwiperWrapper>
-      
-        <!-- navigation buttons -->
         <SwiperButtonPrev />
         <SwiperButtonNext />
       </Swiper>
     </div>
-    <div class="bg-red-700 absolute top-[-20px] left-[-20px] w-40 h-30 rounded-sm shadow-2xl shadow-red-700"/>
-    <div class="bg-red-700 absolute bottom-[-20px] right-[-20px] w-40 h-30 rounded-sm shadow-2xl shadow-red-700"/>
+    <div class="bg-red-700 absolute top-[-20px] left-[-10px] w-40 h-30 rounded-sm shadow-2xl shadow-red-700"/>
+    <div class="bg-red-700 absolute bottom-[-20px] right-[-10px] w-40 h-30 rounded-sm shadow-2xl shadow-red-700"/>
   </div>
 </div>
 

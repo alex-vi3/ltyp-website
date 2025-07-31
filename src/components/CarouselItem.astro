@@ -1,0 +1,11 @@
+---
+import { SwiperSlide } from "astro-swiper";
+
+const { title, imageSrc, link } = Astro.props;
+---
+<SwiperSlide class="flex justify-center items-center">
+    <a href={link}>
+        <h1 class="absolute bottom-5 left-5 text-white text-xl p-4">{title}</h1>
+        <img src={imageSrc}  class="w-full max-h-full object-cover" alt={title}/>
+    </a>
+</SwiperSlide>
