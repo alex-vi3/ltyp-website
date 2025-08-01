@@ -1,0 +1,17 @@
+---
+import Layout from '../layouts/Layout.astro';
+import TrainingSlots from '../components/TrainingSlots.astro';
+import TrainingHallLocation from '../components/TrainingHallLocation.astro';
+---
+
+<Layout>
+    <div class="flex flex-col gap-4 mx-40 ">
+        <h1 class="text-red-700">Informations sur les entrainements</h1>
+        <div class="flex gap-10">
+            <TrainingSlots/>
+            <div class="w-100 h-100"></div>
+        </div>
+        <TrainingHallLocation/>
+    </div>
+</Layout>
+

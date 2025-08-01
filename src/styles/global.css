@@ -19,7 +19,19 @@ html {
   h2 {
     font-size: var(--text-xl);
   }
-  p {
-    font-family: "Montserrat", sans-serif;
+  p,
+  td {
+    font-family: "Inter", sans-serif;
+    font-weight: 300;
   }
+  th {
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+  }
+}
+
+.background-pattern {
+  z-index: 0;
+  background-color: #9f0712;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'%3E%3Cpath fill='black' fill-opacity='0.5' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'%3E%3C/path%3E%3C/svg%3E");
 }
