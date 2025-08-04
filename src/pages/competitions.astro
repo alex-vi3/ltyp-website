@@ -1,0 +1,19 @@
+---
+import Competition from '../components/Competition.astro';
+import CompetitionTeam from '../components/CompetitionTeam.astro';
+import Layout from '../layouts/Layout.astro';
+
+---
+
+<Layout>
+    <div class="flex flex-col gap-10 mx-40 min-h-900 ">
+        <div class="flex gap-10">
+            <img class="flex-1 max-w-120 rounded-md object-cover" src="/images/entrainement-salle.jpg">
+            <div class="flex-1">
+                <Competition/>
+            </div>
+        </div>
+        <CompetitionTeam number={1} srcImage="/images/equipe1.jpg"/>
+    </div>
+</Layout>
+
