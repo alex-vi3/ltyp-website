@@ -2,18 +2,20 @@
 import Layout from '../layouts/Layout.astro';
 import TrainingSlots from '../components/TrainingSlots.astro';
 import TrainingHallLocation from '../components/TrainingHallLocation.astro';
+import TrainingTitle from '../components/TrainingTitle.astro';
 
 ---
 
 <Layout>
-    <div class="flex flex-col gap-10 mx-40 min-h-900 ">
-        <div class="flex gap-10">
-            <div class="flex-1">
-                <TrainingSlots/>
-            </div>
-            <img class="flex-1 max-w-120 rounded-md object-cover" src="/images/entrainement-salle.jpg">
+    <div class="flex flex-col gap-10">
+        <div class="flex items-center justify-center gap-20 pt-20 pb-10">
+            <TrainingTitle/>
+            <img class="flex-1 max-w-180  object-cover" src="/images/yainville.jpg">
         </div>
-        <TrainingHallLocation/>
+        <div>
+            <TrainingSlots/>
+            <TrainingHallLocation/>
+        </div>
     </div>
 </Layout>
 

@@ -1,19 +1,36 @@
 ---
 import Competition from '../components/Competition.astro';
 import CompetitionTeam from '../components/CompetitionTeam.astro';
+import ResultsCarousel from '../components/ResultsCarousel.astro';
+import CompetitionTitle from '../components/CompetitionTitle.astro';
 import Layout from '../layouts/Layout.astro';
 
 ---
 
 <Layout>
-    <div class="flex flex-col gap-10 mx-40 min-h-900 ">
-        <div class="flex gap-10">
-            <img class="flex-1 max-w-120 rounded-md object-cover" src="/images/entrainement-salle.jpg">
-            <div class="flex-1">
-                <Competition/>
-            </div>
+    <div class="flex flex-col">
+        <div class="flex items-center justify-center gap-20 py-10">
+            <CompetitionTitle/>
+            <ResultsCarousel/>
         </div>
-        <CompetitionTeam number={1} srcImage="/images/equipe1.jpg"/>
+        <Competition/>
+        <div class="flex flex-col bg-gray-50 items-center background-pattern-hexa-white gap-20 py-20">
+            <h1 class="italic text-3xl">Nos équipes</h1>
+            <div class="flex gap-40">
+                <CompetitionTeam number={1} srcImage="/images/equipe1.jpg" division="Régional 2" composition={["Alain","Jeremy","David","Samuel"]}/>
+                <CompetitionTeam number={2} srcImage="/images/equipe2.jpg" division="Départemental 1" composition={["Alexandre","Patrick Fo.", "Guillaume", "Johan", "Patrick Fa.", "Cristopher"]}/>
+            </div>
+            <div class="flex gap-40">
+                <CompetitionTeam number={3} srcImage="/images/maillot.png" division="Départemental 3" composition={["A déterminer"]}/>
+                <CompetitionTeam number={4} srcImage="/images/maillot.png" division="Départemental 4" composition={["A déterminer"]}/>
+            </div>
+            <div class="flex gap-40">
+                <CompetitionTeam number={5} srcImage="/images/maillot.png" division="Départemental 4" composition={["A déterminer"]}/>
+                <CompetitionTeam number={6} srcImage="/images/equipe-fem.jpg" division="Féminines" composition={["A déterminer"]}/>
+            </div>
+           
+        </div>
+        
     </div>
 </Layout>
 
