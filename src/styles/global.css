@@ -20,13 +20,11 @@ html {
     font-size: var(--text-xl);
   }
   p,
-  td {
+  td,
+  th,
+  li {
     font-family: "Inter", sans-serif;
-    font-weight: 300;
-  }
-  th {
-    font-family: "Inter", sans-serif;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 

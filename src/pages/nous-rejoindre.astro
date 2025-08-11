@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import AdhesionRates from '../components/AdhesionRates.astro';
+import Licence from '../components/Licence.astro';
+import Medical from '../components/Medical.astro';
+
+---
+
+<Layout>
+    <div class="flex flex-col background-pattern-hexa-white">
+        <div class="flex background-pattern-points-red px-100 py-10 justify-center items-center gap-30">
+            <h1 class="text-white">Informations concernant l'adhésion</h1>
+        </div>
+        <div class="flex flex-col px-100 py-20 gap-10">
+            <div class="bg-white rounded-md p-4">
+                <p>Pour que l'adhésion au club soit validé, trois éléments sont requis :</p>
+                <ul class="list-disc pl-10 pb-2">
+                    <li>Le bordereau d'adhésion</li>
+                    <li>Le questionnaire médical ou certificat</li>
+                    <li>Le paiement de la licence</li>
+                </ul>
+                <p>Pour obtenir les différents documents, vous pouvez les demander aux membres du bureau lors des créneaux d'entraînements ou bien directement les télécharger sur cette page. Une fois remplies, les documents sont à rendre à un membre du bureau pendant les créneaux.</p>
+            </div>
+            <Licence/>
+            <Medical/>
+            <AdhesionRates/>
+        </div>
+    </div>
+</Layout>
+
