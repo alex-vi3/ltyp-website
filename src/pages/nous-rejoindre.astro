@@ -1,30 +1,26 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import AdhesionRates from '../components/AdhesionRates.astro';
-import Licence from '../components/Licence.astro';
-import Medical from '../components/Medical.astro';
+import LayoutPages from '../layouts/LayoutPages.astro';
+import Button from '../components/Button.astro';
+import AdhesionProcedure from '../components/AdhesionProcedure.astro';
+import Formulas from '../components/Formulas.astro';
+import Header from '../components/Header.astro';
 
 ---
 
-<Layout>
-    <div class="flex flex-col background-pattern-hexa-white">
-        <div class="flex background-pattern-points-red px-100 py-10 justify-center items-center gap-30">
-            <h1 class="text-white">Informations concernant l'adhésion</h1>
-        </div>
-        <div class="flex flex-col px-100 py-20 gap-10">
-            <div class="bg-white rounded-md p-4">
-                <p>Pour que l'adhésion au club soit validé, trois éléments sont requis :</p>
-                <ul class="list-disc pl-10 pb-2">
-                    <li>Le bordereau d'adhésion</li>
-                    <li>Le questionnaire médical ou certificat</li>
-                    <li>Le paiement de la licence</li>
-                </ul>
-                <p>Pour obtenir les différents documents, vous pouvez les demander aux membres du bureau lors des créneaux d'entraînements ou bien directement les télécharger sur cette page. Une fois remplies, les documents sont à rendre à un membre du bureau pendant les créneaux.</p>
+<LayoutPages>
+    <div class="flex flex-col bg-[url(/images/entrainement-salle.jpg)] bg-cover bg-blend-overlay bg-gray-800">
+        <Header/>
+        <div class="flex py-10 justify-center items-center gap-30  ">
+            <img class="max-w-100 object-cover rounded-md" src="/images/yainville.jpg">
+            <div class="flex flex-col w-140 gap-6">
+                <h1 class="text-red-700">Nous rejoindre</h1>
+                <p class="text-white">Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
+                <Button text="Nous contacter" link="/nous-rejoindre"/>
             </div>
-            <Licence/>
-            <Medical/>
-            <AdhesionRates/>
+           
         </div>
+        <Formulas/>
+        <AdhesionProcedure/>
     </div>
-</Layout>
+</LayoutPages>
 

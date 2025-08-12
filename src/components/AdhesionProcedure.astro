@@ -1,0 +1,39 @@
+---
+import AdhesionRates from "./AdhesionRates.astro";
+import DocumentLink from "./DocumentLink.astro";
+---
+<div class="flex flex-col px-100 py-20 gap-10 background-pattern-hexa-white items-center">
+    <h1 class="italic text-3xl">Processus d'inscription</h1>
+    <div class="flex flex-col bg-white rounded-md p-10 gap-10">
+        <div class="flex flex-col gap-2">
+            <p>Pour que l'adhésion au club soit validé, trois éléments sont requis :</p>
+            <ul class="list-disc pl-10 pb-2">
+                <li>Le bordereau d'adhésion</li>
+                <li>Le questionnaire médical ou certificat</li>
+                <li>Le paiement de la licence</li>
+            </ul>
+            <p>Pour obtenir les différents documents, vous pouvez les demander aux membres du bureau lors des créneaux d'entraînements ou bien directement les télécharger sur cette page. Une fois remplies, les documents sont à rendre à un membre du bureau pendant les créneaux.</p>
+        </div>
+        
+        <div class="flex flex-col gap-2">
+            <h1>Bordereau d'adhésion</h1>
+            <div class="flex flex-col bg-white rounded-md gap-2">
+                <p>Disponible à la demande à un membre du bureau sur les différents créneaux d'entrainements ou à télécharger ici : </p>
+                <DocumentLink name="Bordereau d'adhésion" url="https://www.fftt.com/doc/administratif/documents/25-2-licence.pdf"/>
+            </div>
+        </div>
+        
+        <div class="flex flex-col gap-2">
+            <h1>Questionnaire médical ou certificat</h1>
+            <div class="flex flex-col bg-white rounded-md gap-4">
+                <p>Que vous soyez mineur ou majeur, vous devez remplir un auto-questionnaire de santé selon votre âge (mineur ou majeur). Ce questionnaire est obligatoire et vous permez de savoir si vous devez fournir un certificat médical ou non selon votre état de santé. De plus, si vous êtes vétéran, vous devez obligatoirement tous les 5 ans (à chaque changement de catégorie vétéran) fournir un certificat médical rempli par votre médecin. </p>
+                <div class="flex gap-4">
+                    <DocumentLink name="Auto-questionnaire majeur" url="https://www.fftt.com/doc/administratif/documents/25-10-1-autoquestionnaire-medical-majeur.pdf"/>
+                    <DocumentLink name="Auto-questionnaire mineur" url="https://www.fftt.com/doc/administratif/documents/25-10-2-autoquestionnaire-medical-mineur.pdf"/>
+                    <DocumentLink name="Certificat médical" url="https://www.fftt.com/doc/administratif/documents/25-9-certificat.pdf"/>
+                </div>
+            </div>
+        </div>
+        <AdhesionRates/>
+    </div>
+</div>
