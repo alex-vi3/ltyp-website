@@ -3,19 +3,15 @@ import Layout from '../layouts/Layout.astro';
 import TrainingSlots from '../components/TrainingSlots.astro';
 import TrainingHallLocation from '../components/TrainingHallLocation.astro';
 import TrainingTitle from '../components/TrainingTitle.astro';
+import LayoutPages from '../layouts/LayoutPages.astro';
+import backgroundImage from "../images/yainville.jpg";
 
 ---
 
-<Layout>
-    <div class="flex flex-col gap-10">
-        <div class="flex items-center justify-center gap-20 pt-20 pb-10">
-            <TrainingTitle/>
-            <img class="flex-1 max-w-180 object-cover rounded-md" src="/images/yainville.jpg">
-        </div>
-        <div>
-            <TrainingSlots/>
-            <TrainingHallLocation/>
-        </div>
+<LayoutPages pageTitle="Entrainements" srcImage={backgroundImage.src}>
+    <div class="flex flex-col">
+        <TrainingSlots/>
+        <TrainingHallLocation/>
     </div>
-</Layout>
+</LayoutPages>
 

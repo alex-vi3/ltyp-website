@@ -1,8 +1,13 @@
 ---
 import CarouselItem from "./CarouselItem.astro";
 import Carousel from "./Carousel.astro";
+import { getCollection } from "astro:content";
+
+const articles = await getCollection("articles");
+console.log(articles)
 ---
 <Carousel title="Dernières actualités">
-    <CarouselItem title="Titre de mon article 1 qui est plus long que l'autre" imageSrc="/images/illu-1.jpg" link="/actualites"/>
-    <CarouselItem title="Titre de mon article 2" imageSrc="/images/illu-2.jpg" link="/actualites"/>
+    {articles.map((article)=>(
+   <CarouselItem article={article.data} id={article.id}/>
+    ))}
 </Carousel>

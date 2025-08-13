@@ -6,6 +6,9 @@ import Presentation from '../components/Presentation.astro';
 import SectionTeaser from '../components/SectionTeaser.astro';
 import JoinUs from '../components/JoinUs.astro';
 import HomeCarousel from '../components/HomeCarousel.astro';
+
+import entrainementImage from "../images/entrainement.jpg";
+import competitionImage from "../images/competition.jpg";
 ---
 
 <Layout>
@@ -16,8 +19,8 @@ import HomeCarousel from '../components/HomeCarousel.astro';
         </div>
         <div>
             <Presentation/>
-            <SectionTeaser title="Des entraînements pour tous" description="Plusieurs fois par semaine, les joueurs se retrouvent à la salle pour progresser ensemble, avec l'encadrement d'entraineurs diplômés. Un entrainement spécifique pour les plus jeunes leur permet de découvrir le tennis de table et de développer leur esprit compétitif." imageUrl="/images/entrainement.jpg" linkUrl="/entrainements" reverse/>
-            <SectionTeaser title="Des équipes à tout niveaux" description="Le club engage chaque année plusieurs équipes au niveau départemental et régional, pour que chacun des licenciés puisse évoluer à son niveau. Nos jeunes participent au championnat jeune, et une équipe féminime évolue en D1." imageUrl="/images/competition.jpg" linkUrl="/competitions"/>
+            <SectionTeaser title="Des entraînements pour tous" description="Plusieurs fois par semaine, les joueurs se retrouvent à la salle pour progresser ensemble, avec l'encadrement d'entraineurs diplômés. Un entrainement spécifique pour les plus jeunes leur permet de découvrir le tennis de table et de développer leur esprit compétitif." imageUrl={entrainementImage.src} linkUrl="/entrainements" reverse/>
+            <SectionTeaser title="Des équipes à tout niveaux" description="Le club engage chaque année plusieurs équipes au niveau départemental et régional, pour que chacun des licenciés puisse évoluer à son niveau. Nos jeunes participent au championnat jeune, et une équipe féminime évolue en D1." imageUrl={competitionImage.src} linkUrl="/competitions"/>
         </div>
         <JoinUs/>
     </div>

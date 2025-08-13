@@ -1,0 +1,30 @@
+---
+import Layout from './Layout.astro';
+import LayoutPages from './LayoutPages.astro';
+import backgroundImage from "../images/entrainement.jpg"
+
+const { frontmatter } = Astro.props;
+---
+<LayoutPages pageTitle={frontmatter.title} srcImage={backgroundImage.src} >
+    <div class="background-pattern-hexa-white py-10 px-120">
+        <div class="flex flex-col items-center bg-white rounded-md px-10 py-4">
+            <div class="flex justify-between w-full py-2">
+                <p class="italic">Publié le {frontmatter.pubDate.toLocaleDateString()}</p>
+                <p class="italic">Écrit par : {frontmatter.author}</p>
+            </div>
+            <div class="flex flex-col gap-10 leading-8">
+                <img src={frontmatter.image.url} width="100%" alt={frontmatter.image.alt} />
+                <slot />
+            </div>
+        </div>
+    </div>
+  
+
+  
+    <!-- <div class="tags">
+    {frontmatter.tags.map((tag: string) => (
+        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
+    ))}
+    </div>  -->
+   
+</LayoutPages>

@@ -14,10 +14,10 @@ html {
 
 @layer base {
   h1 {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
   }
   h2 {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
   }
   p,
   td,

@@ -3,24 +3,19 @@ import LayoutPages from '../layouts/LayoutPages.astro';
 import Button from '../components/Button.astro';
 import AdhesionProcedure from '../components/AdhesionProcedure.astro';
 import Formulas from '../components/Formulas.astro';
-import Header from '../components/Header.astro';
+import backgroundImage from "../images/entrainement.jpg";
+import entrainementImage from "../images/yainville.jpg";
 
 ---
-
-<LayoutPages>
-    <div class="flex flex-col bg-[url(/images/entrainement-salle.jpg)] bg-cover bg-blend-overlay bg-gray-800">
-        <Header/>
-        <div class="flex py-10 justify-center items-center gap-30  ">
-            <img class="max-w-100 object-cover rounded-md" src="/images/yainville.jpg">
-            <div class="flex flex-col w-140 gap-6">
-                <h1 class="text-red-700">Nous rejoindre</h1>
-                <p class="text-white">Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
-                <Button text="Nous contacter" link="/nous-rejoindre"/>
-            </div>
-           
+<LayoutPages pageTitle="Nous rejoindre" srcImage={backgroundImage.src}>
+    <div class="flex py-10 justify-center items-center gap-30 background-pattern-hexa-black px-100">
+        <img class="h-70 object-cover rounded-md" src={entrainementImage.src}>
+        <div class="flex flex-col w-140 gap-6">
+            <p class="text-white">Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
+            <Button text="Nous contacter" link="/nous-rejoindre"/>
         </div>
-        <Formulas/>
-        <AdhesionProcedure/>
     </div>
+    <Formulas/>
+    <AdhesionProcedure/>
 </LayoutPages>
 
