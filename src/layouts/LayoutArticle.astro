@@ -1,30 +1,41 @@
 ---
 import Layout from './Layout.astro';
 import LayoutPages from './LayoutPages.astro';
-import backgroundImage from "../images/entrainement.jpg"
+import backgroundImage from "../images/raquette3.jpg"
+import { Icon } from 'astro-icon/components';
+import Tag from '../components/Tag.astro';
 
 const { frontmatter } = Astro.props;
 ---
-<LayoutPages pageTitle={frontmatter.title} srcImage={backgroundImage.src} >
-    <div class="background-pattern-hexa-white py-10 px-120">
-        <div class="flex flex-col items-center bg-white rounded-md px-10 py-4">
-            <div class="flex justify-between w-full py-2">
-                <p class="italic">Publié le {frontmatter.pubDate.toLocaleDateString()}</p>
-                <p class="italic">Écrit par : {frontmatter.author}</p>
-            </div>
-            <div class="flex flex-col gap-10 leading-8">
-                <img src={frontmatter.image.url} width="100%" alt={frontmatter.image.alt} />
-                <slot />
+<LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src} >
+    <div class="flex flex-col items-center background-pattern-hexa-white">
+        <div class="w-250">
+            <div class="flex flex-col bg-white px-20 py-10">
+                <h1 class="text-3xl self-center py-4">{frontmatter.title}</h1>
+                <div class="flex justify-between justify-start">
+                    <div class="flex w-full py-2 gap-10">
+                        <div class="flex items-center gap-2">
+                            <Icon name="mdi:calendar-edit" class="text-red-800"/>
+                            <p class="italic">Publié le {frontmatter.pubDate.toLocaleDateString()}</p>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <Icon name="mdi:account" class="text-red-800"/>
+                            <p class="italic">{frontmatter.author}</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-2 items-center">
+                        {frontmatter.tags.map((tag: string) => (
+                            <Tag tagName={tag}/>
+                        ))}
+                    </div>
+                </div>
+               
+               
+                <div class="flex flex-col gap-10 leading-8">
+                    <img src={frontmatter.image.url} width="100%" alt={frontmatter.image.alt} class="rounded-md" />
+                    <slot />
+                </div>
             </div>
         </div>
     </div>
-  
-
-  
-    <!-- <div class="tags">
-    {frontmatter.tags.map((tag: string) => (
-        <p class="tag"><a href={`/tags/${tag}`}>{tag}</a></p>
-    ))}
-    </div>  -->
-   
 </LayoutPages>

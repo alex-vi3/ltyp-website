@@ -8,14 +8,18 @@ import entrainementImage from "../images/yainville.jpg";
 
 ---
 <LayoutPages pageTitle="Nous rejoindre" srcImage={backgroundImage.src}>
-    <div class="flex py-10 justify-center items-center gap-30 background-pattern-hexa-black px-100">
-        <img class="h-70 object-cover rounded-md" src={entrainementImage.src}>
-        <div class="flex flex-col w-140 gap-6">
-            <p class="text-white">Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
-            <Button text="Nous contacter" link="/nous-rejoindre"/>
-        </div>
+    <div class="flex flex-col items-center background-pattern-hexa-white">
+        <div class="w-300 bg-white">
+            <div class="flex py-10 justify-center items-center gap-30 px-20">
+                <img class="h-70 object-cover rounded-md" src={entrainementImage.src}>
+                <div class="flex flex-col w-140 gap-6">
+                    <p>Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
+                    <Button text="Nous contacter" link="/nous-rejoindre"/>
+                </div>
+            </div>
+            <Formulas/>
+            <AdhesionProcedure/>
+         </div>
     </div>
-    <Formulas/>
-    <AdhesionProcedure/>
 </LayoutPages>
 

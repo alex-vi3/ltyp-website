@@ -5,7 +5,7 @@ author: "Alexandre Vigneron"
 image:
   url: "https://image.noelshack.com/fichiers/2025/33/3/1755099826-design-sans-titre-10.png"
   alt: "Un site internet pour Le Trait Yainville Pongiste !"
-tags: ["astro", "blogging", "apprentissage en public"]
+tags: ["divers", "competitions"]
 ---
 
 Bienvenue sur mon _nouveau blog_ dédié à l'apprentissage d'Astro ! Ici, je vais partager mon parcours d'apprentissage en créant un nouveau site web.

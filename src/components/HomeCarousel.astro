@@ -4,7 +4,7 @@ import Carousel from "./Carousel.astro";
 import { getCollection } from "astro:content";
 
 const articles = await getCollection("articles");
-console.log(articles)
+
 ---
 <Carousel title="Dernières actualités">
     {articles.map((article)=>(
