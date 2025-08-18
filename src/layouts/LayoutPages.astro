@@ -23,7 +23,11 @@ const {pageTitle, srcImage} = Astro.props;
 			<Header/>
 			<PageTitle title={pageTitle}/>
 		</div>
-        <slot />
+		<div class="flex flex-col items-center background-pattern-hexa-white">
+			<div class="w-300 bg-white">
+        		<slot />
+			</div>
+		</div>
 		<Footer/>
 	</body>
 </html>

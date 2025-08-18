@@ -2,24 +2,26 @@
 import LayoutPages from '../layouts/LayoutPages.astro';
 import Button from '../components/Button.astro';
 import AdhesionProcedure from '../components/AdhesionProcedure.astro';
-import Formulas from '../components/Formulas.astro';
 import backgroundImage from "../images/entrainement.jpg";
-import entrainementImage from "../images/yainville.jpg";
+import entrainementImage from "../images/entrainement-3.jpg";
+import CardFormula from '../components/CardFormula.astro';
 
 ---
 <LayoutPages pageTitle="Nous rejoindre" srcImage={backgroundImage.src}>
-    <div class="flex flex-col items-center background-pattern-hexa-white">
-        <div class="w-300 bg-white">
-            <div class="flex py-10 justify-center items-center gap-30 px-20">
-                <img class="h-70 object-cover rounded-md" src={entrainementImage.src}>
-                <div class="flex flex-col w-140 gap-6">
-                    <p>Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
-                    <Button text="Nous contacter" link="/nous-rejoindre"/>
-                </div>
-            </div>
-            <Formulas/>
-            <AdhesionProcedure/>
-         </div>
+    <div class="flex py-10 justify-center items-center gap-30 px-20">
+        <img class="h-70 object-cover" src={entrainementImage.src}>
+        <div class="flex flex-col w-140 gap-6">
+            <p>Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
+            <Button text="Nous contacter" link="/contact"/>
+        </div>
     </div>
+    <div class="flex flex-col gap-6 pt-10 pb-20 px-20">
+        <h1 class="text-red-700">Formules proposées</h1>
+        <div class="flex gap-10">
+            <CardFormula title="Loisirs" offers={["Entraînements","Tournois internes", "Événements internes (repas etc)"]}/>
+            <CardFormula title="Compétitions" offers={["Entraînements", "Championnats par équipes", "Compétitions individuelles officielles (critériums, vétérans...)", "Prêt du maillot et survêtements", "Tournois internes", "Événements internes (repas etc)"]} />
+        </div>
+    </div>
+    <AdhesionProcedure/>
 </LayoutPages>
 

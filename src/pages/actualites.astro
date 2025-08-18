@@ -9,11 +9,7 @@ const articles = await getCollection("articles");
 
 ---
 <LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src} >
-    <div class="flex flex-col items-center background-pattern-hexa-white">
-        <div class="w-300 bg-white">
-            <ArticlesList articles={articles} client:load/>
-        </div>
-    </div>
+    <ArticlesList articles={articles} client:load/>
 </LayoutPages>
 
 
