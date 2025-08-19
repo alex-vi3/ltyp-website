@@ -1,10 +1,14 @@
 ---
 import { Icon } from "astro-icon/components";
 
-const {title, offers} = Astro.props;
+const {title, offers, price} = Astro.props;
 ---
-<div class="flex flex-col w-80 shadow-2xl flex-1">
-    <h2 class="p-4 bg-linear-to-r from-red-700 to-red-900 text-white">{title}</h2>
+<div class="flex flex-col w-80 shadow-2xl w-full">
+    <div class="flex justify-between items-center bg-linear-to-r from-red-700 to-red-900 p-4">
+        <h2 class="text-white">{title}</h2>
+        <h2 class="text-white">{price}€</h2>
+    </div>
+   
     <hr/>
     <div class="flex flex-col gap-2 p-4">  
         {offers.map((offer: string)=>

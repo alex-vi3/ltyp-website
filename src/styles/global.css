@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  outline: 1px solid red !important;
+}
+
 @layer base {
   h1 {
     font-family: "Special Gothic Expanded One", sans-serif;
