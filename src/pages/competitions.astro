@@ -14,19 +14,15 @@ import image from "../images/raquette-5.png";
 <LayoutPages pageTitle="Compétitions" srcImage={backgroundCompetition.src}>
     <Competition/>
     <div class="flex flex-col bg-gray-100 items-center gap-20 py-20">
-        <div class="flex relative">
+        <div class="flex items-center">
             <h1 class="italic text-3xl text-red-700">Nos équipes</h1>
-            <img src={image.src} class="absolute w-30 h-25 -right-30 -bottom-10" alt="Raquette de tennis de table"/>
+            <img src={image.src} class="w-30 h-25 hidden lg:block" alt="Raquette de tennis de table"/>
         </div>               
-        <div class="flex gap-40">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
             <CompetitionTeam number={1} srcImage={imageEquipe1.src} division="Régional 2" composition={["Alain","Jeremy","David","Samuel"]}/>
             <CompetitionTeam number={2} srcImage={imageEquipe2.src} division="Départemental 1" composition={["Alexandre","Patrick Fo.", "Guillaume", "Johan", "Patrick Fa.", "Cristopher"]}/>
-        </div>
-        <div class="flex gap-40">
             <CompetitionTeam number={3}  division="Départemental 3" composition={["A déterminer"]}/>
             <CompetitionTeam number={4} division="Départemental 4" composition={["A déterminer"]}/>
-        </div>
-        <div class="flex gap-40">
             <CompetitionTeam number={5}  division="Départemental 4" composition={["A déterminer"]}/>
             <CompetitionTeam number={6} srcImage={imageEquipeFem.src} division="Féminines" composition={["A déterminer"]}/>
         </div>

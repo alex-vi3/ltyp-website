@@ -1,14 +1,7 @@
 @import "tailwindcss";
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-* {
-  outline: 1px solid red !important;
-}
-
 @layer base {
+  /* Mobile */
   h1 {
     font-family: "Special Gothic Expanded One", sans-serif;
     font-size: var(--text-xl);
@@ -20,6 +13,7 @@
   a,
   h3 {
     font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: var(--text-md);
   }
   p,
   td,
@@ -30,7 +24,23 @@
   select,
   input {
     font-family: "Inter", sans-serif;
-    font-weight: 400;
+    font-size: var(--text-sm);
+  }
+
+  /* Override pour desktop (breakpoint lg)*/
+  @media (min-width: 1024px) {
+    h1 {
+      font-size: var(--text-2xl);
+    }
+    h2 {
+      font-size: var(--text-xl);
+    }
+    h3 {
+      font-size: var(--text-lg);
+    }
+    p {
+      font-size: var(--text-md);
+    }
   }
 }
 
@@ -69,4 +79,13 @@ textarea {
 
 label {
   font-weight: 500;
+}
+
+.popover-burger {
+  display: none;
+}
+
+.expanded {
+  display: flex;
+  flex-direction: column;
 }

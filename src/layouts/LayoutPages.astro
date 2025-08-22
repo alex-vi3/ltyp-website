@@ -1,4 +1,5 @@
 ---
+import Burger from '../components/Burger.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PageTitle from '../components/PageTitle.astro';
@@ -19,11 +20,14 @@ const {pageTitle, srcImage} = Astro.props;
 		<title>Le Trait Yainville Pongiste</title>
 	</head>
 	<body>
-		<div class={`flex flex-col bg-cover bg-blend-multiply bg-center bg-gray-400 pb-20`} style={`background-image: url(${srcImage})`}>
+		<div class={`flex flex-col items-center bg-cover bg-blend-multiply bg-center bg-gray-400 py-10 lg:pb-20 lg:pt-0`} style={`background-image: url(${srcImage})`}>
 			<Header/>
 			<PageTitle title={pageTitle}/>
+			<div class="lg:hidden pt-4">
+				<Burger client:load/>
+			</div>
 		</div>
-		<div class="flex flex-col items-center lg:background-pattern-hexa-white">
+		<div class="flex flex-col items-center background-pattern-hexa-white">
 			<div class="w-full lg:w-6xl bg-white">
         		<slot />
 			</div>

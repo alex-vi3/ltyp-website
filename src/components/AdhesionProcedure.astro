@@ -3,10 +3,10 @@ import AdhesionRates from "./AdhesionRates.astro";
 import DocumentLink from "./DocumentLink.astro";
 import image from "../images/balle-rebond.png";
 ---
-<div class="flex flex-col bg-gray-100 p-20 gap-10 items-center">
-    <div class="flex relative">
-        <h1 class="italic text-3xl text-red-700">Processus d'inscription</h1>
-        <img src={image.src} class="absolute w-25 h-25 top-[-100%] -right-30" alt="Balle qui rebondit"/>
+<div class="flex flex-col bg-gray-100 p-10 lg:p-20 gap-10 items-center">
+    <div class="flex items-center justify-center gap-4">
+        <h1 class="italic text-xl lg:text-3xl text-red-700">Processus d'inscription</h1>
+        <img src={image.src} class="w-25 h-25 hidden lg:block" alt="Balle qui rebondit"/>
     </div>
     <div class="flex flex-col rounded-md gap-10">
         <div class="flex flex-col gap-2">
@@ -31,7 +31,7 @@ import image from "../images/balle-rebond.png";
             <h2>Questionnaire médical ou certificat</h2>
             <div class="flex flex-col rounded-md gap-4">
                 <p>Que vous soyez mineur ou majeur, vous devez remplir un auto-questionnaire de santé selon votre âge (mineur ou majeur). Ce questionnaire est obligatoire et vous permez de savoir si vous devez fournir un certificat médical ou non selon votre état de santé. De plus, si vous êtes vétéran, vous devez obligatoirement tous les 5 ans (à chaque changement de catégorie vétéran) fournir un certificat médical rempli par votre médecin. </p>
-                <div class="flex gap-4">
+                <div class="flex flex-col lg:flex-row gap-4">
                     <DocumentLink name="Auto-questionnaire majeur" url="https://www.fftt.com/doc/administratif/documents/25-10-1-autoquestionnaire-medical-majeur.pdf"/>
                     <DocumentLink name="Auto-questionnaire mineur" url="https://www.fftt.com/doc/administratif/documents/25-10-2-autoquestionnaire-medical-mineur.pdf"/>
                     <DocumentLink name="Certificat médical" url="https://www.fftt.com/doc/administratif/documents/25-9-certificat.pdf"/>
