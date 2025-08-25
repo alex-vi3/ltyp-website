@@ -2,7 +2,7 @@ import React from "react";
 
 export const CardArticle = ({ article, id }) => (
   <div className="max-w-xs w-full group/card">
-    <a href={`/articles/${id}/`}>
+    <a href={`/actualites/${id}/`}>
       <div
         className="cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl max-w-sm mx-auto flex flex-col justify-between p-4 bg-cover bg-center"
         style={{ backgroundImage: `url(${article.image.url})` }}

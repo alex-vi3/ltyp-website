@@ -3,16 +3,39 @@
 <div class="flex justify-between px-10 py-5 z-1 hidden lg:flex w-full">
     <a href="/" class="text-white"><img class="w-22 h-26" src="/logo.png"></a>
     <div class="flex gap-20">
-        <a href="/actualites" class="text-white text-lg">ACTUALITES</a>
-        <a href="/entrainements" class="text-white text-lg">ENTRAINEMENTS</a>
-        <a href="/competitions" class="text-white text-lg">COMPETITIONS</a>
-        <a href="/nous-rejoindre" class="text-white text-lg">NOUS REJOINDRE</a>
-        <a href="/contact" class="relative inline-flex items-center justify-center py-1 px-5  overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-md h-fit shadow-xl group hover:ring-1 hover:ring-red-900">
+        <a href="/actualites" class="text-white text-lg hover-underline">ACTUALITES</a>
+        <a href="/entrainements" class="text-white text-lg hover-underline">ENTRAINEMENTS</a>
+        <a href="/competitions" class="text-white text-lg hover-underline">COMPETITIONS</a>
+        <a href="/nous-rejoindre" class="text-white text-lg hover-underline">NOUS REJOINDRE</a>
+        <a href="/contact" class="relative inline-flex items-center justify-center py-1 px-5 overflow-hidden font-medium text-indigo-600 transition duration-300 ease-out rounded-md h-fit shadow-xl group hover:ring-1 hover:ring-red-900">
             <span class="absolute inset-0 w-full h-full bg-gradient-to-br from-red-500 via-red-700 to-red-900"></span>
             <span class="absolute bottom-0 right-0 block w-64 h-64 mb-32 mr-4 transition duration-500 origin-bottom-left transform rotate-45 translate-x-24 bg-red-500 rounded-full opacity-30 group-hover:rotate-90 ease"></span>
             <span class="relative text-white">CONTACT</span>
         </a>
     </div>
 </div>
+
+<style>
+    .hover-underline {
+    position: relative;
+    display: inline-block;
+    }
+
+    .hover-underline::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(to left, var(--color-red-500), var(--color-red-900));
+    top: 30px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-out;
+    }
+
+    .hover-underline:hover::after {
+    transform: scaleX(1);
+    }
+</style>
 
 

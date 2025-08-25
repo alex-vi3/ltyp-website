@@ -5,7 +5,7 @@ import { Icon } from 'astro-icon/components';
 import { getCollection } from 'astro:content';
 import { ArticlesList } from '../components/ArticlesList';
 
-const articles = await getCollection("articles");
+const articles = await getCollection("actualites");
 
 ---
 <LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src} >

@@ -10,8 +10,10 @@ import Entrainement from '../components/Entrainement.astro';
 ---
 
 <LayoutPages pageTitle="Entrainements" srcImage={backgroundImage.src}>
-    <Entrainement/>
-    <TrainingSlots/>
-    <TrainingHallLocation/>
+    <div class="flex flex-col gap-10">
+        <Entrainement/>
+        <TrainingSlots/>
+        <TrainingHallLocation/>
+    </div>
 </LayoutPages>
 

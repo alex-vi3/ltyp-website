@@ -3,7 +3,7 @@ import CarouselItem from "./CarouselItem.astro";
 import Carousel from "./Carousel.astro";
 import { getCollection } from "astro:content";
 
-const articles = await getCollection("articles");
+const articles = await getCollection("actualites");
 
 ---
 <Carousel title="Dernières actualités">

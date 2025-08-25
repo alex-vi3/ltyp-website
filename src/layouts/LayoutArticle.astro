@@ -9,11 +9,11 @@ const { frontmatter } = Astro.props;
 ---
 <LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src} >
     <div class="flex flex-col items-center background-pattern-hexa-white">
-        <div class="w-250">
-            <div class="flex flex-col bg-white px-20 py-10">
-                <h1 class="text-3xl self-center py-4">{frontmatter.title}</h1>
-                <div class="flex justify-between justify-start">
-                    <div class="flex w-full py-2 gap-10">
+        <div class="lg:w-250">
+            <div class="flex flex-col bg-white px-4 lg:px-20 py-10 gap-4">
+                <h1 class="text-3xl self-center lg:py-4">{frontmatter.title}</h1>
+                <div class="flex flex-col justify-between justify-start">
+                    <div class="flex flex-col lg:flex-row w-full py-2 lg:gap-10">
                         <div class="flex items-center gap-2">
                             <Icon name="mdi:calendar-edit" class="text-red-800"/>
                             <p class="italic">Publié le {frontmatter.pubDate.toLocaleDateString()}</p>

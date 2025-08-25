@@ -15,6 +15,10 @@
     font-family: "Special Gothic Expanded One", sans-serif;
     font-size: var(--text-md);
   }
+  h4 {
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-size: var(--text-sm);
+  }
   p,
   td,
   th,
@@ -37,6 +41,9 @@
     }
     h3 {
       font-size: var(--text-lg);
+    }
+    h3 {
+      font-size: var(--text-md);
     }
     p {
       font-size: var(--text-md);
@@ -81,11 +88,18 @@ label {
   font-weight: 500;
 }
 
-.popover-burger {
-  display: none;
-}
+/* Classes utilisés pour les composants de navigation mobile */
 
-.expanded {
+.popover-burger {
   display: flex;
   flex-direction: column;
+  max-height: 0;
+  overflow: hidden;
+  opacity: 0;
+  transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+}
+
+.popover-burger.expanded {
+  max-height: 300px;
+  opacity: 1;
 }

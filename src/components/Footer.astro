@@ -5,7 +5,7 @@ import logoCD76 from "../images/cd76tt.png";
 import logoFFTT from "../images/fftt.png";
 import { Icon } from "astro-icon/components";
 ---
-<div class="flex flex-col lg:flex-row w-full lg:px-[20%] bg-black p-4 justify-between items-center text-white gap-4 lg-gap-0"> 
+<div class="flex flex-col lg:flex-row w-full lg:px-10 2xl:px-[20%] bg-black p-4 justify-between items-center text-white gap-10 lg:gap-4"> 
     <div class="flex flex-col">
         <a href="https://facebook.com/groups/LTYPongiste" target="_blank" class="flex gap-2">
             <Icon name="mdi:facebook" class="text-2xl"/>
@@ -14,10 +14,15 @@ import { Icon } from "astro-icon/components";
         <p class="text-xs text-gray-400">Copyright © 2025 LTYP. Tous droits réservés.</p>
         <a href="/mentions-legales" class="text-xs text-gray-400"><p class="hover:underline">Mentions légales</p></a>
     </div>
-    <div class="flex gap-10 ">
-        <img class="h-20" src={logoFFTT.src}>
-        <img class="h-20" src={logoCD76.src}>
-        <img class="h-20" src={logoYainville.src}>
-        <img class="h-20" src={logoTrait.src}>
+    <div class="flex flex-col lg:flex-row gap-10">
+        <div class="flex flex-row gap-10">
+            <img class="h-20" src={logoFFTT.src}>
+            <img class="h-20" src={logoCD76.src}>
+        </div>
+        <div class="flex flex-row gap-10">
+            <img class="h-20" src={logoYainville.src}>
+            <img class="h-20" src={logoTrait.src}>
+        </div>
     </div>
+
 </div>

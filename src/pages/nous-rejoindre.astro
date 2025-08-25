@@ -8,19 +8,21 @@ import CardFormula from '../components/CardFormula.astro';
 
 ---
 <LayoutPages pageTitle="Nous rejoindre" srcImage={backgroundImage.src}>
-    <div class="flex py-10 justify-center items-center gap-30 px-10 lg:px-20">
-        <img class="h-70 object-cover hidden lg:block" src={entrainementImage.src}>
-        <div class="flex flex-col gap-6 items-center lg:items-start">
-            <p>Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
-            <Button text="Nous contacter" link="/contact"/>
+    <div class="flex flex-col gap-10">
+        <div class="flex py-10 justify-center items-center gap-30 px-10 lg:px-20">
+            <img class="h-70 object-cover hidden lg:block" src={entrainementImage.src}>
+            <div class="flex flex-col gap-6 items-center lg:items-start">
+                <p>Peu importe votre profil, vous êtes le bienvenue ! Pour adhérer au club, le plus simple est de se rendre directement aux salles d'entrainements sur nos créneaux, afin que nous puissions vous informer et vous donner les documents nécessaires. Cette page résume aussi toute les informations à connaître !</p>
+                <Button text="Nous contacter" link="/contact"/>
+            </div>
         </div>
-    </div>
-    <div class="flex flex-col gap-6 pt-10 pb-20 px-10 lg:px-20">
-        <h1 class="text-red-700">Formules proposées</h1>
-        <div class="flex flex-col lg:flex-row gap-10">
-            <CardFormula title="Loisirs" offers={["Entraînements","Tournois internes", "Événements internes (repas etc)"]} price="50"/>
-            <CardFormula title="Compétitions" offers={["Entraînements", "Championnats par équipes", "Compétitions individuelles officielles (critériums, vétérans...)", "Prêt du maillot et survêtements", "Tournois internes", "Événements internes (repas etc)"]} price="80"/>
-            <CardFormula title="Jeunes" offers={["Entraînements", "Championnats par équipes", "Compétitions individuelles officielles (critériums, vétérans...)", "Prêt du maillot et survêtements", "Tournois internes", "Événements internes (repas etc)"]} price="50 à 80"/>
+        <div class="flex flex-col gap-6 pt-10 pb-20 px-10 lg:px-20">
+            <h1 class="text-red-700">Formules proposées</h1>
+            <div class="flex flex-col lg:flex-row gap-10">
+                <CardFormula title="Loisirs" offers={["Entraînements","Tournois internes", "Événements internes (repas etc)"]} price="50"/>
+                <CardFormula title="Compétitions" offers={["Entraînements", "Championnats par équipes", "Compétitions individuelles officielles (critériums, vétérans...)", "Prêt du maillot et survêtements", "Tournois internes", "Événements internes (repas etc)"]} price="80"/>
+                <CardFormula title="Jeunes" offers={["Entraînements", "Championnats par équipes", "Compétitions individuelles officielles (critériums, vétérans...)", "Prêt du maillot et survêtements", "Tournois internes", "Événements internes (repas etc)"]} price="50 à 80"/>
+            </div>
         </div>
     </div>
     <AdhesionProcedure/>

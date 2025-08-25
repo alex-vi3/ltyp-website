@@ -17,8 +17,8 @@ export const ArticlesList = ({ articles }) => {
     : articles;
 
   return (
-    <div className="flex flex-col gap-6 p-20 pt-10">
-      <div className="flex justify-between items-end">
+    <div className="flex flex-col gap-6 px-4 lg:p-20 py-10">
+      <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end">
         <h1>Derniers articles</h1>
         <form className="self-end">
           <label htmlFor="tags" className="text-md text-gray-800 font-bold">
@@ -40,9 +40,13 @@ export const ArticlesList = ({ articles }) => {
       </div>
 
       {filteredArticles.length > 0 ? (
-        <div className="grid grid-cols-3 gap-10">
+        <div className="grid lg:grid-cols-3 gap-10">
           {filteredArticles.map((article) => (
-            <CardArticle article={article.data} id={article.id} />
+            <CardArticle
+              article={article.data}
+              id={article.id}
+              key={article.id}
+            />
           ))}
         </div>
       ) : (
