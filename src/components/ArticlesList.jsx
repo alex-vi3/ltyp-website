@@ -19,8 +19,8 @@ export const ArticlesList = ({ articles }) => {
   return (
     <div className="flex flex-col gap-6 px-4 lg:p-20 py-10">
       <div className="flex flex-col lg:flex-row lg:justify-between lg:items-end">
-        <h1>Derniers articles</h1>
-        <form className="self-end">
+        <h1 className="text-red-700">Derniers articles</h1>
+        <form>
           <label htmlFor="tags" className="text-md text-gray-800 font-bold">
             Filtre
           </label>
