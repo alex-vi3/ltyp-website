@@ -14,14 +14,14 @@ import CardData from '../components/CardData.astro';
 
 <Layout>
     <div class="flex flex-col">
-        <div class="flex flex-col lg:flex-row items-center justify-center font-thin gap-10 px-20">
+        <div class="flex flex-col xl:flex-row items-center justify-center font-thin gap-10 px-10 lg:px-20">
             <MainTitle/>
             <HomeCarousel/>
         </div>
         <div class="flex flex-col items-center justify-center">
             <Presentation/>
             <SectionTeaser title="Des entraînements pour tous" description="Plusieurs fois par semaine, les joueurs se retrouvent à la salle pour progresser ensemble, avec l'encadrement d'entraineurs diplômés. Un entrainement spécifique pour les plus jeunes leur permet de découvrir le tennis de table et de développer leur esprit compétitif." imageUrl={entrainementImage.src} linkUrl="/entrainements" reverse/>
-            <SectionTeaser title="Des équipes à tout niveaux" description="Le club engage chaque année plusieurs équipes au niveau départemental et régional, pour que chacun des licenciés puisse évoluer à son niveau. Nos jeunes participent au championnat jeune, et une équipe féminime évolue en D1." imageUrl={competitionImage.src} linkUrl="/competitions"/>
+            <SectionTeaser title="Des équipes à tous niveaux" description="Le club engage chaque année plusieurs équipes au niveau départemental et régional, pour que chacun des licenciés puisse évoluer à son niveau. Nos jeunes participent au championnat jeune, et une équipe féminime évolue en D1." imageUrl={competitionImage.src} linkUrl="/competitions"/>
             <div class="flex px-10 lg:px-10 py-20 bg-white w-full justify-center">
                 <div class="flex flex-col lg:flex-row w-full lg:w-300 gap-20 justify-center">
                     <CardData title="Plus de 75 licenciés" description="dont 45 participant aux compétitions"/>

@@ -1,7 +1,11 @@
+import type { InferEntrySchema } from "astro:content";
 import React from "react";
 
-export const CardArticle = ({ article, id }) => (
-  <div className="max-w-xs w-full group/card">
+export const CardArticle: React.FC<{
+  article: InferEntrySchema<"actualites">;
+  id: string;
+}> = ({ article, id }) => (
+  <div className="lg:max-w-xs group/card">
     <a href={`/actualites/${id}/`}>
       <div
         className="cursor-pointer overflow-hidden relative card h-96 rounded-md shadow-xl max-w-sm mx-auto flex flex-col justify-between p-4 bg-cover bg-center"
@@ -14,9 +18,9 @@ export const CardArticle = ({ article, id }) => (
             {article.pubDate.toLocaleDateString()}
           </p>
         </div>
-        <h1 className="text-xl md:text-2xl text-gray-50 relative z-10">
+        <h2 className="text-xl md:text-2xl text-gray-50 relative z-10">
           {article.title}
-        </h1>
+        </h2>
       </div>
     </a>
   </div>

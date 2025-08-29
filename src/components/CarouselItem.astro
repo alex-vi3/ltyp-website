@@ -4,8 +4,8 @@ import { SwiperSlide } from "astro-swiper";
 const { article, id } = Astro.props;
 ---
 <SwiperSlide class="flex justify-center items-center">
-    <a href={`/articles/${id}/`}>
-        <h1 class="absolute bottom-5 left-5 text-white text-xs lg:text-xl lg:p-4 hover:text-gray-300">{article.title}</h1>
-        <img src={article.image.url}  class="w-full max-h-full object-cover h-full" alt={article.title}/>
+    <a href={`/actualites/${id}/`}>
+        <h3 class="absolute bottom-5 left-5 text-white text-xs lg:text-xl lg:p-4 hover:text-gray-300">{article.title}</h3>
+        <img src={article.image.url} class="w-full max-h-full object-cover h-full" alt={article.title}/>
     </a>
 </SwiperSlide>

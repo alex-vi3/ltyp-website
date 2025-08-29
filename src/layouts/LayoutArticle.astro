@@ -1,5 +1,4 @@
 ---
-import Layout from './Layout.astro';
 import LayoutPages from './LayoutPages.astro';
 import backgroundImage from "../images/raquette3.jpg"
 import { Icon } from 'astro-icon/components';
@@ -11,9 +10,9 @@ const { frontmatter } = Astro.props;
     <div class="flex flex-col items-center background-pattern-hexa-white">
         <div class="lg:w-250">
             <div class="flex flex-col bg-white px-4 lg:px-20 py-10 gap-4">
-                <h1 class="text-3xl self-center lg:py-4">{frontmatter.title}</h1>
-                <div class="flex flex-col justify-between justify-start">
-                    <div class="flex flex-col lg:flex-row w-full py-2 lg:gap-10">
+                <h2 class="text-3xl self-center lg:py-4">{frontmatter.title}</h2>
+                <div class="flex flex-col lg:flex-row justify-start lg:justify-between">
+                    <div class="flex flex-col lg:flex-row w-full lg:gap-10">
                         <div class="flex items-center gap-2">
                             <Icon name="mdi:calendar-edit" class="text-red-800"/>
                             <p class="italic">Publié le {frontmatter.pubDate.toLocaleDateString()}</p>
