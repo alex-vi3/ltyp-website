@@ -2,7 +2,7 @@
 import LayoutPages from '../layouts/LayoutPages.astro';
 import backgroundImage from "../images/entrainement.jpg";
 import facebookImage from "../images/facebook.svg";
-
+import image from "../images/raquette.jpg";
 ---
 <LayoutPages pageTitle="Contact" srcImage={backgroundImage.src}>
     <div class="flex flex-col gap-2 gap-10 py-10">
@@ -18,13 +18,14 @@ import facebookImage from "../images/facebook.svg";
         </div>
         <div class="flex flex-col gap-4 px-10 lg:px-20">
             <h2 class="text-red-700">Contactez-nous par mail</h2>
-            <p>Vous souhaitez nous rejoindre ? Vous avez une question concernant notre club ? N'hésitez pas à nous contacter via ce formulaire, nous vous répondrons dans les plus brefs délais !</p>
+            <p>Vous souhaitez nous rejoindre ? Vous avez une question concernant notre club ? N'hésitez pas à nous contacter en nous envoyant un mail à l'adresse <span class="font-bold">ltyp@laposte.net</span>, nous vous répondrons dans les plus brefs délais !</p>
         </div>
-        <div class="flex px-10 lg:px-20">
+        <img src={image.src} class="px-50 hidden md:block" alt="Raquette de tennis de table"/>
+        <!-- <div class="flex px-10 lg:px-20">
             <div class="flex items-center justify-center flex-1 hidden lg:flex">
                 <img class="w-45 h-50 rounded-md" src="/logo.png">
             </div>
-            <form name="contact" method="POST" netlify class="flex flex-col gap-4 flex-1">
+            <form name="contact" method="POST" class="flex flex-col gap-4 flex-1">
                 <div class="flex flex-col lg:flex-row flex-1 gap-2">
                     <div class="flex flex-col flex-1">
                         <label for="name">Nom</label>
@@ -46,7 +47,7 @@ import facebookImage from "../images/facebook.svg";
                 
                 <button type="submit" class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded w-fit self-center cursor-pointer">Envoyer</button>
             </form>
-        </div>
+        </div> -->
     </div>
 </div>
    
