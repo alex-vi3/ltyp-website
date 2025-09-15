@@ -5,9 +5,14 @@ import { getCollection } from "astro:content";
 
 const articles = await getCollection("actualites");
 
+// tri par date de publication (plus récent en premier)
+const sortedArticles = articles.sort((article1, article2) => {
+  return new Date(article2.data.pubDate).getTime() - new Date(article1.data.pubDate).getTime();
+});
+
 ---
 <Carousel title="Dernières actualités">
-    {articles.map((article)=>(
+    {sortedArticles.slice(0,4).map((article)=>(
    <CarouselItem article={article.data} id={article.id}/>
     ))}
 </Carousel>

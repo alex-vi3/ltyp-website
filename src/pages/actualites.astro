@@ -7,9 +7,14 @@ import { ArticlesList } from '../components/ArticlesList';
 
 const articles = await getCollection("actualites");
 
+// tri par date de publication (plus récent en premier)
+const sortedArticles = articles.sort((article1, article2) => {
+  return new Date(article2.data.pubDate).getTime() - new Date(article1.data.pubDate).getTime();
+});
+
 ---
 <LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src} >
-    <ArticlesList articles={articles} client:load/>
+    <ArticlesList articles={sortedArticles} client:load/>
 </LayoutPages>
 
 
