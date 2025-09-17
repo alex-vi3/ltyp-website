@@ -1,10 +1,8 @@
 # public/admin/config.yml
 backend:
   name: github
-  repo: alex-vi3/ltyp-website # Remplacez par VOTRE repo (ex: johndoe/mon-blog)
-  branch: master # ou master selon votre branche principale
-  auth_type: pkce
-  app_id: Ov23li1TKtm3tuh8EvHg
+  repo: alex-vi3/ltyp-website
+  branch: master
 
 # Configuration locale pour le développement (optionnel)
 # local_backend: true
