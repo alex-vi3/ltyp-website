@@ -1,0 +1,35 @@
+# public/admin/config.yml
+backend:
+  name: github
+  repo: alex-vi3/ltyp-website # Remplacez par VOTRE repo (ex: johndoe/mon-blog)
+  branch: main # ou master selon votre branche principale
+  auth_type: pkce
+  app_id: Ov23li1TKtm3tuh8EvHg
+
+# Configuration locale pour le développement (optionnel)
+# local_backend: true
+
+media_folder: "public/images/uploadsActualites" # Où stocker les images uploadées
+public_folder: "/images/uploadsActualites" # URL publique des images
+
+collections:
+  - name: "actualites"
+    label: "Actualités"
+    folder: "src/actualites" # Correspond à votre loader glob
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date de publication", name: "pubDate", widget: "datetime" }
+      - { label: "Auteur", name: "author", widget: "string" }
+      - label: "Image"
+        name: "image"
+        widget: "object"
+        fields:
+          - { label: "URL de l'image", name: "url", widget: "image" }
+          - { label: "Texte alternatif", name: "alt", widget: "string" }
+      - label: "Tags"
+        name: "tags"
+        widget: "list"
+        field: { label: "Tag", name: "tag", widget: "string" }
+      - { label: "Contenu", name: "body", widget: "markdown" }
