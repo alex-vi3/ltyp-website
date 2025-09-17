@@ -2,7 +2,7 @@
 backend:
   name: github
   repo: alex-vi3/ltyp-website # Remplacez par VOTRE repo (ex: johndoe/mon-blog)
-  branch: main # ou master selon votre branche principale
+  branch: master # ou master selon votre branche principale
   auth_type: pkce
   app_id: Ov23li1TKtm3tuh8EvHg
 
