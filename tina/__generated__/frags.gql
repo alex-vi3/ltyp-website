@@ -1,0 +1,13 @@
+fragment ActualitesParts on Actualites {
+  __typename
+  title
+  pubDate
+  author
+  image {
+    __typename
+    url
+    alt
+  }
+  tags
+  body
+}

@@ -23,9 +23,7 @@ const { frontmatter } = Astro.props;
                         </div>
                     </div>
                     <div class="flex gap-2 items-center">
-                        {frontmatter.tags.map((tag: string) => (
-                            <Tag tagName={tag}/>
-                        ))}
+                        <Tag tagName={frontmatter.tag}/>
                     </div>
                 </div>
                

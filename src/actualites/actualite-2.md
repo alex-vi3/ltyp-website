@@ -5,7 +5,7 @@ author: "Alexandre Vigneron"
 image:
   url: "https://image.noelshack.com/fichiers/2025/35/5/1756481281-chatgpt-image-29-ao-t-2025-17-27-23.jpg"
   alt: "Retour à la table, rentrée 2025 !"
-tags: ["divers", "evenements"]
+tag: "evenements"
 ---
 
 C'est reparti pour une nouvelle saison de tennis de table ! Le club espère vous retrouver nombreux en cette rentrée 2025. Le premier entraînement dirigé de cette saison sera le mardi 2 septembre avec Yannick. Les papiers d'inscription sur place seront disponibles sur place. Il est également possible de les télécharger directement sur la page "Nous rejoindre" du site, et de nous les ramener !

@@ -5,7 +5,7 @@ author: "Alexandre Vigneron"
 image:
   url: "https://image.noelshack.com/fichiers/2025/33/3/1755099826-design-sans-titre-10.png"
   alt: "Un site internet pour Le Trait Yainville Pongiste !"
-tags: ["divers", "competitions"]
+tag: "divers"
 ---
 
 En cette rentrée 2025, le club se dote d'un site internet ! Que vous soyez licencié, personne intéressée pour nous rejoindre, ou adversaire, vous pourrez retrouver dessus toutes les informations concernant le club. N'hésitez pas à nous faire des retours pour l'améliorer au fur et à mesure du temps !

@@ -11,7 +11,7 @@ const actualites = defineCollection({
       url: z.string(),
       alt: z.string(),
     }),
-    tags: z.array(z.string()),
+    tag: z.enum(["divers", "competitions", "entrainements", "evenements"]),
   }),
 });
 

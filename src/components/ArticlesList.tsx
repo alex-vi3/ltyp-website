@@ -16,7 +16,7 @@ export const ArticlesList: React.FC<{
   const [selectedTag, setSelectedTag] = useState("");
 
   const filteredArticles = selectedTag
-    ? articles.filter((article) => article.data.tags?.includes(selectedTag))
+    ? articles.filter((article) => article.data.tag === selectedTag)
     : articles;
 
   return (

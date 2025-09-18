@@ -5,7 +5,7 @@ author: "Claudine Le Gallic"
 image:
   url: "https://image.noelshack.com/fichiers/2025/38/1/1757925057-forum-association.jpg"
   alt: "Participation au forum des associations du Trait"
-tags: ["divers", "evenements"]
+tag: "evenements"
 ---
 
 ## Un rendez-vous local incontournable
