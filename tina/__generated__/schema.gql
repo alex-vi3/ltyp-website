@@ -97,7 +97,7 @@ type Actualites implements Node & Document {
   pubDate: String
   author: String
   image: ActualitesImage
-  tags: String
+  tag: String
   body: JSON
   id: ID!
   _sys: SystemInfo!
@@ -142,7 +142,7 @@ input ActualitesFilter {
   pubDate: DatetimeFilter
   author: StringFilter
   image: ActualitesImageFilter
-  tags: StringFilter
+  tag: StringFilter
   body: RichTextFilter
 }
 
@@ -186,7 +186,7 @@ input ActualitesMutation {
   pubDate: String
   author: String
   image: ActualitesImageMutation
-  tags: String
+  tag: String
   body: JSON
 }
 

@@ -8,6 +8,6 @@ fragment ActualitesParts on Actualites {
     url
     alt
   }
-  tags
+  tag
   body
 }

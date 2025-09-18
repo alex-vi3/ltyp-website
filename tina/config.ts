@@ -35,7 +35,7 @@ export default defineConfig({
             ],
           },
           {
-            name: "tags",
+            name: "tag",
             label: "Tags",
             type: "string",
             options: ["divers", "competitions", "entrainements", "evenements"],

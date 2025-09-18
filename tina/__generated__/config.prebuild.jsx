@@ -5,7 +5,7 @@ var config_default = defineConfig({
   // Ton Client ID Tina Cloud
   token: process.env.TINA_TOKEN,
   // Ton Read-only Token Tina Cloud
-  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || "main",
+  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || "master",
   // Branche Git
   build: {
     outputFolder: "admin",
@@ -44,7 +44,7 @@ var config_default = defineConfig({
             ]
           },
           {
-            name: "tags",
+            name: "tag",
             label: "Tags",
             type: "string",
             options: ["divers", "competitions", "entrainements", "evenements"]

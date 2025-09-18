@@ -177,7 +177,7 @@ export type Actualites = Node & Document & {
   pubDate?: Maybe<Scalars['String']['output']>;
   author?: Maybe<Scalars['String']['output']>;
   image?: Maybe<ActualitesImage>;
-  tags?: Maybe<Scalars['String']['output']>;
+  tag?: Maybe<Scalars['String']['output']>;
   body?: Maybe<Scalars['JSON']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
@@ -222,7 +222,7 @@ export type ActualitesFilter = {
   pubDate?: InputMaybe<DatetimeFilter>;
   author?: InputMaybe<StringFilter>;
   image?: InputMaybe<ActualitesImageFilter>;
-  tags?: InputMaybe<StringFilter>;
+  tag?: InputMaybe<StringFilter>;
   body?: InputMaybe<RichTextFilter>;
 };
 
@@ -314,18 +314,18 @@ export type ActualitesMutation = {
   pubDate?: InputMaybe<Scalars['String']['input']>;
   author?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<ActualitesImageMutation>;
-  tags?: InputMaybe<Scalars['String']['input']>;
+  tag?: InputMaybe<Scalars['String']['input']>;
   body?: InputMaybe<Scalars['JSON']['input']>;
 };
 
-export type ActualitesPartsFragment = { __typename: 'Actualites', title?: string | null, pubDate?: string | null, author?: string | null, tags?: string | null, body?: any | null, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null };
+export type ActualitesPartsFragment = { __typename: 'Actualites', title?: string | null, pubDate?: string | null, author?: string | null, tag?: string | null, body?: any | null, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null };
 
 export type ActualitesQueryVariables = Exact<{
   relativePath: Scalars['String']['input'];
 }>;
 
 
-export type ActualitesQuery = { __typename?: 'Query', actualites: { __typename: 'Actualites', id: string, title?: string | null, pubDate?: string | null, author?: string | null, tags?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null } };
+export type ActualitesQuery = { __typename?: 'Query', actualites: { __typename: 'Actualites', id: string, title?: string | null, pubDate?: string | null, author?: string | null, tag?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null } };
 
 export type ActualitesConnectionQueryVariables = Exact<{
   before?: InputMaybe<Scalars['String']['input']>;
@@ -337,7 +337,7 @@ export type ActualitesConnectionQueryVariables = Exact<{
 }>;
 
 
-export type ActualitesConnectionQuery = { __typename?: 'Query', actualitesConnection: { __typename?: 'ActualitesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ActualitesConnectionEdges', cursor: string, node?: { __typename: 'Actualites', id: string, title?: string | null, pubDate?: string | null, author?: string | null, tags?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null } | null } | null> | null } };
+export type ActualitesConnectionQuery = { __typename?: 'Query', actualitesConnection: { __typename?: 'ActualitesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ActualitesConnectionEdges', cursor: string, node?: { __typename: 'Actualites', id: string, title?: string | null, pubDate?: string | null, author?: string | null, tag?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null } | null } | null> | null } };
 
 export const ActualitesPartsFragmentDoc = gql`
     fragment ActualitesParts on Actualites {
@@ -350,7 +350,7 @@ export const ActualitesPartsFragmentDoc = gql`
     url
     alt
   }
-  tags
+  tag
   body
 }
     `;
