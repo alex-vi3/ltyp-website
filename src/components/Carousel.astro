@@ -1,6 +1,11 @@
 ---
-import { Swiper, SwiperWrapper, SwiperButtonPrev, SwiperButtonNext } from "astro-swiper";
-import type { AstroSwiperType } from "astro-swiper";
+import {
+  Swiper,
+  SwiperWrapper,
+  SwiperButtonPrev,
+  SwiperButtonNext,
+} from 'astro-swiper';
+import type { AstroSwiperType } from 'astro-swiper';
 
 const astroSwiperOptions: AstroSwiperType = {
   options: {
@@ -9,27 +14,33 @@ const astroSwiperOptions: AstroSwiperType = {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-    slidesPerView:"auto",
-    
+    slidesPerView: 'auto',
   },
 };
 
-const {title} = Astro.props;
+const { title } = Astro.props;
 ---
+
 <div class="flex flex-col m-10 gap-6">
   <h2 class="text-white">{title}</h2>
-  <div class="flex flex-col relative  w-80 sm:w-140 xl:w-160 2xl:w-180">
+  <div class="flex flex-col relative w-80 sm:w-140 xl:w-160 2xl:w-180">
     <div>
-      <Swiper options={astroSwiperOptions.options} >
-        <SwiperWrapper >
-          <slot/>
+      <Swiper options={astroSwiperOptions.options}>
+        <SwiperWrapper>
+          <slot />
         </SwiperWrapper>
         <SwiperButtonPrev />
         <SwiperButtonNext />
       </Swiper>
     </div>
-    <div class="background-pattern-points-red absolute top-[-10px] left-[-10px] lg:left-0 w-20 lg:w-40 h-20 lg:h:40 rounded-sm"/>
-    <div class="background-pattern-points-red absolute bottom-[-10px] right-[-10px] lg:right-0 w-20 lg:w-40 h-20 lg:h:40 rounded-sm"/>
+    <div
+      class="background-pattern-points-red absolute top-[-10px] left-[-10px] lg:left-0 w-20 lg:w-40 h-20 lg:h:40 rounded-sm"
+    >
+    </div>
+    <div
+      class="background-pattern-points-red absolute bottom-[-10px] right-[-10px] lg:right-0 w-20 lg:w-40 h-20 lg:h:40 rounded-sm"
+    >
+    </div>
   </div>
 </div>
 
@@ -46,7 +57,7 @@ const {title} = Astro.props;
 
   .swiper-button-next,
   .swiper-button-prev {
-    right:10px;
+    right: 10px;
     padding: 10px;
     color: white;
   }
@@ -57,8 +68,8 @@ const {title} = Astro.props;
   }
 
   :root {
-      --swiper-navigation-size: 20px !important;
-    }
+    --swiper-navigation-size: 20px !important;
+  }
 
   @media (min-width: 1024px) {
     .swiper-button-next,

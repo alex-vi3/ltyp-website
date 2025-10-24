@@ -1,29 +1,39 @@
 ---
-import backgroundImage from "../images/entrainement.jpg";
-import LayoutPages from "../layouts/LayoutPages.astro";
+import backgroundImage from '../images/entrainement.jpg';
+import LayoutPages from '../layouts/LayoutPages.astro';
 ---
+
 <LayoutPages pageTitle="Mentions légales" srcImage={backgroundImage.src}>
-    <div class="flex flex-col gap-6 px-10 lg:px-20 py-10">
-        <div class="flex flex-col">
-            <h2>Le Trait Yainville Pongiste</h2>
-            <p class="text-gray-800">Association sportive</p>
-            <p class="text-gray-800">Adresse email : ltyp@laposte.net</p>
-            <p class="text-gray-800">Président : Alain Fournier</p>
-        </div>
-        <div class="flex flex-col">
-            <h2>Éditeur et développement du site web</h2>
-            <p class="text-gray-800">Alexandre Vigneron</p>
-            <p class="text-gray-800">Contact par mail : alexandre76490@gmail.com</p>
-        </div>
-        <div class="flex flex-col">
-            <h2>Hébergeur du site</h2>
-            <p class="text-gray-800">Ce site est hébergé par : Netlify, Inc.</p>
-            <p class="text-gray-800">  Adresse: 44 Montgomery Street, Suite 300, San Francisco, CA 94104 
-            <p class="text-gray-800">Contact par mail : privacy@netlify.com</p>
-        </div>
-        <div class="flex flex-col">
-            <h2>Accès au site</h2>
-            <p class="text-gray-800">Le site est normalement accessible, à tout moment, à l'utilisateur. Toutefois, l'éditeur pourra, à tout moment, suspendre, limiter ou interrompre le site afin de procéder, notamment, à des mises à jour ou des modifications de son contenu. L'éditeur ne pourra en aucun cas être tenu responsable des conséquences éventuelles de cette indisponibilité sur les activités de l'utilisateur.</p>
-        </div>
+  <div class="flex flex-col gap-6 px-10 lg:px-20 py-10">
+    <div class="flex flex-col">
+      <h2>Le Trait Yainville Pongiste</h2>
+      <p class="text-gray-800">Association sportive</p>
+      <p class="text-gray-800">Adresse email : ltyp@laposte.net</p>
+      <p class="text-gray-800">Président : Alain Fournier</p>
     </div>
-</LayoutPages>
+    <div class="flex flex-col">
+      <h2>Éditeur et développement du site web</h2>
+      <p class="text-gray-800">Alexandre Vigneron</p>
+      <p class="text-gray-800">Contact par mail : alexandre76490@gmail.com</p>
+    </div>
+    <div class="flex flex-col">
+      <h2>Hébergeur du site</h2>
+      <p class="text-gray-800">Ce site est hébergé par : Netlify, Inc.</p>
+      <p class="text-gray-800">
+        Adresse: 44 Montgomery Street, Suite 300, San Francisco, CA 94104
+        <p class="text-gray-800">Contact par mail : privacy@netlify.com</p>
+      </p>
+      <div class="flex flex-col">
+        <h2>Accès au site</h2>
+        <p class="text-gray-800">
+          Le site est normalement accessible, à tout moment, à l'utilisateur.
+          Toutefois, l'éditeur pourra, à tout moment, suspendre, limiter ou
+          interrompre le site afin de procéder, notamment, à des mises à jour ou
+          des modifications de son contenu. L'éditeur ne pourra en aucun cas
+          être tenu responsable des conséquences éventuelles de cette
+          indisponibilité sur les activités de l'utilisateur.
+        </p>
+      </div>
+    </div>
+  </div></LayoutPages
+>

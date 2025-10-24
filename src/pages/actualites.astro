@@ -1,20 +1,20 @@
 ---
 import LayoutPages from '../layouts/LayoutPages.astro';
-import backgroundImage from "../images/raquette3.jpg"
-import { Icon } from 'astro-icon/components';
+import backgroundImage from '../images/raquette3.jpg';
 import { getCollection } from 'astro:content';
 import { ArticlesList } from '../components/ArticlesList';
 
-const articles = await getCollection("actualites");
+const articles = await getCollection('actualites');
 
 // tri par date de publication (plus récent en premier)
 const sortedArticles = articles.sort((article1, article2) => {
-  return new Date(article2.data.pubDate).getTime() - new Date(article1.data.pubDate).getTime();
+  return (
+    new Date(article2.data.pubDate).getTime() -
+    new Date(article1.data.pubDate).getTime()
+  );
 });
-
 ---
-<LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src} >
-    <ArticlesList articles={sortedArticles} client:load/>
+
+<LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src}>
+  <ArticlesList articles={sortedArticles} client:load />
 </LayoutPages>
-
-

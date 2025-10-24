@@ -1,38 +1,52 @@
 ---
-import { Icon } from 'astro-icon/components'
-
+import { Icon } from 'astro-icon/components';
 ---
+
 <div class="flex flex-col gap-6 pb-10 px-10 lg:px-20">
-    <h2 class="text-red-700">Deux salles d'entraînements</h2>
-    <div class="flex flex-col lg:flex-row gap-20">
-        <div class="flex flex-col flex-1 gap-2">
-            <div class="flex gap-1 items-center">
-                <Icon name="mdi:location" class="text-3xl text-black" />
-                <h3 class="text-black">Salle Omnisports de Yainville</h3>
-            </div>
-            <div class="flex flex-col lg:flex-row gap-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d426.19061663064275!2d0.8300136703590858!3d49.45561377329526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDnCsDI3JzIwLjQiTiAwwrA0OSc1MC4xIkU!5e0!3m2!1sfr!2sfr!4v1754296146155!5m2!1sfr!2sfr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"/>
-                <div class="flex flex-col text-black ">
-                    <p>Salle Omnisports de Yainville</p>
-                    <p>Impasse Paul Bert</p>
-                    <p>76750, YAINVILLE</p>
-                </div>
-            </div>
+  <h2 class="text-red-700">Deux salles d'entraînements</h2>
+  <div class="flex flex-col lg:flex-row gap-20">
+    <div class="flex flex-col flex-1 gap-2">
+      <div class="flex gap-1 items-center">
+        <Icon name="mdi:location" class="text-3xl text-black" />
+        <h3 class="text-black">Salle Omnisports de Yainville</h3>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d426.19061663064275!2d0.8300136703590858!3d49.45561377329526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNDnCsDI3JzIwLjQiTiAwwrA0OSc1MC4xIkU!5e0!3m2!1sfr!2sfr!4v1754296146155!5m2!1sfr!2sfr"
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="flex flex-col text-black">
+          <p>Salle Omnisports de Yainville</p>
+          <p>Impasse Paul Bert</p>
+          <p>76750, YAINVILLE</p>
         </div>
-    
-        <div class="flex flex-col flex-1 gap-2">
-            <div class="flex gap-1 items-center">
-                <Icon name="mdi:location" class="text-3xl text-black" />
-                <h3 class="text-black">Salle Guy de Maupassant du Trait</h3>
-            </div>
-            <div class="flex flex-col lg:flex-row gap-4">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.4033190783275!2d0.7922365769092857!3d49.49577715564056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0fa28c4ec3a63%3A0x16d3e61d99bdd16a!2ssalle%20Guy%20de%20Maupassant!5e0!3m2!1sfr!2sfr!4v1754296474399!5m2!1sfr!2sfr" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"/>
-                <div class="flex flex-col text-black">
-                    <p>Salle Guy de Maupassant</p>
-                    <p>1139 rue Maréchal Gallieni</p>
-                    <p>76580, LE TRAIT</p>
-                </div>
-            </div>
-        </div>
+      </div>
     </div>
+
+    <div class="flex flex-col flex-1 gap-2">
+      <div class="flex gap-1 items-center">
+        <Icon name="mdi:location" class="text-3xl text-black" />
+        <h3 class="text-black">Salle Guy de Maupassant du Trait</h3>
+      </div>
+      <div class="flex flex-col lg:flex-row gap-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2591.4033190783275!2d0.7922365769092857!3d49.49577715564056!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0fa28c4ec3a63%3A0x16d3e61d99bdd16a!2ssalle%20Guy%20de%20Maupassant!5e0!3m2!1sfr!2sfr!4v1754296474399!5m2!1sfr!2sfr"
+          width="100%"
+          height="250"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="flex flex-col text-black">
+          <p>Salle Guy de Maupassant</p>
+          <p>1139 rue Maréchal Gallieni</p>
+          <p>76580, LE TRAIT</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

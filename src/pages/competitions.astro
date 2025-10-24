@@ -2,30 +2,81 @@
 import Competition from '../components/Competition.astro';
 import CompetitionTeam from '../components/CompetitionTeam.astro';
 import LayoutPages from '../layouts/LayoutPages.astro';
-import backgroundCompetition from "../images/competition-background.jpg";
-import imageEquipe1 from "../images/equipe1.jpg";
-import imageEquipe2 from "../images/equipe2.jpg";
-import imageEquipeFem from "../images/equipe-fem.jpg";
-import image from "../images/raquette-5.png";
-
-
+import backgroundCompetition from '../images/competition-background.jpg';
+import imageEquipe1 from '../images/equipe1.jpg';
+import imageEquipe2 from '../images/equipe2.jpg';
+import imageEquipeFem from '../images/equipe-fem.jpg';
+import image from '../images/raquette-5.png';
 ---
 
 <LayoutPages pageTitle="Compétitions" srcImage={backgroundCompetition.src}>
-    <Competition/>
-    <div class="flex flex-col bg-gray-100 items-center gap-10 py-20">
-        <div class="flex items-center">
-            <h2 class="italic text-3xl text-red-700">Nos équipes</h2>
-            <img src={image.src} class="w-30 h-25 hidden lg:block" alt="Raquette de tennis de table"/>
-        </div>               
-        <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
-            <CompetitionTeam number={1} srcImage={imageEquipe1.src} division="Régional 2" composition={["Jeremy","Alain","David","Samuel","Jordan"]}/>
-            <CompetitionTeam number={2} srcImage={imageEquipe2.src} division="Départemental 1" composition={["Alexandre","Patrick Fo.", "Guillaume", "Johan", "Cristopher"]}/>
-            <CompetitionTeam number={3}  division="Départemental 3" composition={["Denis, Thierry, Franck, Ludovic, Patrick Ch."]}/>
-            <CompetitionTeam number={4} division="Départemental 4" composition={["Romane, Stéphane, Mickael, Enzo, Nathan, Louane","Jacky"]}/>
-            <CompetitionTeam number={5}  division="Départemental 4" composition={["Céline", "Dylan", "Valentino", "Nathalie", "Claudine", "Maurice"]}/>
-            <CompetitionTeam number={6} srcImage={imageEquipeFem.src} division="Féminines" composition={["Céline","Nathalie","Claudine","Romane","Louane","Emilienne"]}/>
-        </div>
+  <Competition />
+  <div class="flex flex-col bg-gray-100 items-center gap-10 py-20">
+    <div class="flex items-center">
+      <h2 class="italic text-3xl text-red-700">Nos équipes</h2>
+      <img
+        src={image.src}
+        class="w-30 h-25 hidden lg:block"
+        alt="Raquette de tennis de table"
+      />
     </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <CompetitionTeam
+        number={1}
+        srcImage={imageEquipe1.src}
+        division="Régional 2"
+        composition={['Jeremy', 'Alain', 'David', 'Samuel', 'Jordan']}
+      />
+      <CompetitionTeam
+        number={2}
+        srcImage={imageEquipe2.src}
+        division="Départemental 1"
+        composition={[
+          'Alexandre',
+          'Patrick Fo.',
+          'Guillaume',
+          'Johan',
+          'Cristopher',
+        ]}
+      />
+      <CompetitionTeam
+        number={3}
+        division="Départemental 3"
+        composition={['Denis, Thierry, Franck, Ludovic, Patrick Ch.']}
+      />
+      <CompetitionTeam
+        number={4}
+        division="Départemental 4"
+        composition={[
+          'Romane, Stéphane, Mickael, Enzo, Nathan, Louane',
+          'Jacky',
+        ]}
+      />
+      <CompetitionTeam
+        number={5}
+        division="Départemental 4"
+        composition={[
+          'Céline',
+          'Dylan',
+          'Valentino',
+          'Nathalie',
+          'Claudine',
+          'Maurice',
+        ]}
+      />
+      <CompetitionTeam
+        number={6}
+        srcImage={imageEquipeFem.src}
+        division="Féminines"
+        composition={[
+          'Céline',
+          'Nathalie',
+          'Claudine',
+          'Romane',
+          'Louane',
+          'Emilienne',
+        ]}
+      />
+    </div>
+  </div>
 </LayoutPages>
-

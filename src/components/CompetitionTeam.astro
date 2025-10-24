@@ -1,16 +1,20 @@
 ---
-import imageDefault from "../images/maillot.png";
+import imageDefault from '../images/maillot.png';
 
-const {number, srcImage, division, composition} = Astro.props;
-
+const { number, srcImage, division, composition } = Astro.props;
 ---
-<div class="flex flex-col bg-linear-to-r from-red-700 to-red-900 w-80 lg:w-100 shadow-2xl shadow-black items-center">
-    <div class="flex items-center gap-4">
-        <h3 class="text-white text-lg py-4">Équipe {number} </h3>
-        <p class="italic font-bold text-md text-white">({division})</p>
-    </div>
-    <img class="object-cover h-60 w-100" src={srcImage ?? imageDefault.src} >
-    <div>
-        <p class="text-white px-10 py-4"><span class="font-bold">Composition : </span>{composition.join(", ")}</p>
-    </div>
+
+<div
+  class="flex flex-col bg-linear-to-r from-red-700 to-red-900 w-80 lg:w-100 shadow-2xl shadow-black items-center"
+>
+  <div class="flex items-center gap-4">
+    <h3 class="text-white text-lg py-4">Équipe {number}</h3>
+    <p class="italic font-bold text-md text-white">({division})</p>
+  </div>
+  <img class="object-cover h-60 w-100" src={srcImage ?? imageDefault.src} />
+  <div>
+    <p class="text-white px-10 py-4">
+      <span class="font-bold">Composition : </span>{composition.join(', ')}
+    </p>
+  </div>
 </div>

@@ -3,37 +3,42 @@ import Burger from '../components/Burger.astro';
 import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PageTitle from '../components/PageTitle.astro';
-import '../styles/global.css'
+import '../styles/global.css';
 
-const {pageTitle, srcImage} = Astro.props;
+const { pageTitle, srcImage } = Astro.props;
 ---
+
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Condensed+One&family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
-		<link rel="icon" type="image/svg+xml" href="/logo.png" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Le Trait Yainville Pongiste</title>
-	</head>
-	<body>
-		<div class={`flex flex-col items-center bg-cover bg-blend-multiply bg-center bg-gray-400 py-10 xl:pb-20 xl:pt-0`} style={`background-image: url(${srcImage})`}>
-			<Header/>
-			<PageTitle title={pageTitle}/>
-			<div class="xl:hidden pt-4">
-				<Burger/>
-			</div>
-		</div>
-		<div class="flex flex-col items-center background-pattern-hexa-white">
-			<div class="w-full lg:w-6xl bg-white">
-        		<slot />
-			</div>
-		</div>
-		<Footer/>
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Special+Gothic+Condensed+One&family=Special+Gothic+Expanded+One&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/svg+xml" href="/logo.png" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Le Trait Yainville Pongiste</title>
+  </head>
+  <body>
+    <div
+      class={`flex flex-col items-center bg-cover bg-blend-multiply bg-center bg-gray-400 py-10 xl:pb-20 xl:pt-0`}
+      style={`background-image: url(${srcImage})`}
+    >
+      <Header />
+      <PageTitle title={pageTitle} />
+      <div class="xl:hidden pt-4">
+        <Burger />
+      </div>
+    </div>
+    <div class="flex flex-col items-center background-pattern-hexa-white">
+      <div class="w-full lg:w-6xl bg-white">
+        <slot />
+      </div>
+    </div>
+    <Footer />
+  </body>
 </html>
-
-

@@ -2,16 +2,14 @@
 import TrainingSlots from '../components/TrainingSlots.astro';
 import TrainingHallLocation from '../components/TrainingHallLocation.astro';
 import LayoutPages from '../layouts/LayoutPages.astro';
-import backgroundImage from "../images/entrainement-3.jpg";
+import backgroundImage from '../images/entrainement-3.jpg';
 import Entrainement from '../components/Entrainement.astro';
-
 ---
 
 <LayoutPages pageTitle="Entrainements" srcImage={backgroundImage.src}>
-    <div class="flex flex-col gap-10">
-        <Entrainement/>
-        <TrainingSlots/>
-        <TrainingHallLocation/>
-    </div>
+  <div class="flex flex-col gap-10">
+    <Entrainement />
+    <TrainingSlots />
+    <TrainingHallLocation />
+  </div>
 </LayoutPages>
-

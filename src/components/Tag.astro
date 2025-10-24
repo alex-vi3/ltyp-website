@@ -1,8 +1,9 @@
 ---
-import { getTabBadgeColor } from "../utils/tag.utils";
+import { getTabBadgeColor } from '../utils/tag.utils';
 
-const {tagName} = Astro.props;
+const { tagName } = Astro.props;
 ---
+
 <div class=`${getTabBadgeColor(tagName)} rounded-sm w-fit h-fit px-2 h-2`>
-    <p class="text-sm capitalize">{tagName}</p>
+  <p class="text-sm capitalize">{tagName}</p>
 </div>

@@ -1,11 +1,11 @@
 ---
-title: "Participation au forum des associations du Trait"
+title: 'Participation au forum des associations du Trait'
 pubDate: 2025-09-15
-author: "Claudine Le Gallic"
+author: 'Claudine Le Gallic'
 image:
-  url: "https://image.noelshack.com/fichiers/2025/38/1/1757925057-forum-association.jpg"
-  alt: "Participation au forum des associations du Trait"
-tag: "evenements"
+  url: 'https://image.noelshack.com/fichiers/2025/38/1/1757925057-forum-association.jpg'
+  alt: 'Participation au forum des associations du Trait'
+tag: 'evenements'
 ---
 
 ## Un rendez-vous local incontournable

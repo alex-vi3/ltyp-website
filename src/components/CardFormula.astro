@@ -1,21 +1,26 @@
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 
-const {title, offers, price} = Astro.props;
+const { title, offers, price } = Astro.props;
 ---
+
 <div class="flex flex-col w-80 shadow-2xl w-full">
-    <div class="flex justify-between items-center bg-linear-to-r from-red-700 to-red-900 p-4">
-        <h2 class="text-white">{title}</h2>
-        <h3 class="text-white">{price}€ / an</h3>
-    </div>
-   
-    <hr/>
-    <div class="flex flex-col gap-2 p-4">  
-        {offers.map((offer: string)=>
-            <div class="flex items-center gap-2">
-                <Icon name="mdi:check"/>
-                <p>{offer}</p>
-            </div>
-        )}  
-    </div>
+  <div
+    class="flex justify-between items-center bg-linear-to-r from-red-700 to-red-900 p-4"
+  >
+    <h2 class="text-white">{title}</h2>
+    <h3 class="text-white">{price}€ / an</h3>
+  </div>
+
+  <hr />
+  <div class="flex flex-col gap-2 p-4">
+    {
+      offers.map((offer: string) => (
+        <div class="flex items-center gap-2">
+          <Icon name="mdi:check" />
+          <p>{offer}</p>
+        </div>
+      ))
+    }
+  </div>
 </div>

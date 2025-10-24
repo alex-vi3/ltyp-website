@@ -1,49 +1,49 @@
-import { defineConfig } from "tinacms";
+import { defineConfig } from 'tinacms';
 
 export default defineConfig({
-  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID, // Ton Client ID Tina Cloud
-  token: process.env.TINA_TOKEN, // Ton Read-only Token Tina Cloud
-  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || "master", // Branche Git
+  clientId: process.env.NEXT_PUBLIC_TINA_CLIENT_ID,
+  token: process.env.TINA_TOKEN,
+  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || 'master',
   build: {
-    outputFolder: "admin", // Dossier où Tina génère ses fichiers
-    publicFolder: "public", // Dossier public pour les médias
+    outputFolder: 'admin',
+    publicFolder: 'public',
   },
   media: {
     tina: {
-      mediaRoot: "images", // dossier où les images seront stockées
-      publicFolder: "public", // dossier public visible par le site
+      mediaRoot: 'images',
+      publicFolder: 'public',
     },
   },
   schema: {
     collections: [
       {
-        name: "actualites",
-        label: "Actualités",
-        path: "src/actualites", // Dossier où sont stockés les fichiers .md
-        format: "md", // Format Markdown
+        name: 'actualites',
+        label: 'Actualités',
+        path: 'src/actualites',
+        format: 'md',
         fields: [
-          { name: "title", label: "Titre", type: "string" },
-          { name: "pubDate", label: "Date de publication", type: "datetime" },
-          { name: "author", label: "Auteur", type: "string" },
+          { name: 'title', label: 'Titre', type: 'string' },
+          { name: 'pubDate', label: 'Date de publication', type: 'datetime' },
+          { name: 'author', label: 'Auteur', type: 'string' },
           {
-            name: "image",
-            label: "Image",
-            type: "object",
+            name: 'image',
+            label: 'Image',
+            type: 'object',
             fields: [
-              { name: "url", label: "URL de l'image", type: "image" },
-              { name: "alt", label: "Texte alternatif", type: "string" },
+              { name: 'url', label: "URL de l'image", type: 'image' },
+              { name: 'alt', label: 'Texte alternatif', type: 'string' },
             ],
           },
           {
-            name: "tag",
-            label: "Tags",
-            type: "string",
-            options: ["divers", "competitions", "entrainements", "evenements"],
+            name: 'tag',
+            label: 'Tags',
+            type: 'string',
+            options: ['divers', 'competitions', 'entrainements', 'evenements'],
           },
           {
-            type: "rich-text",
-            name: "body",
-            label: "Contenu",
+            type: 'rich-text',
+            name: 'body',
+            label: 'Contenu',
             isBody: true,
           },
         ],

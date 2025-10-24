@@ -1,27 +1,44 @@
 ---
 import LayoutPages from '../layouts/LayoutPages.astro';
-import backgroundImage from "../images/entrainement.jpg";
-import facebookImage from "../images/facebook.svg";
-import image from "../images/raquette.jpg";
+import backgroundImage from '../images/entrainement.jpg';
+import facebookImage from '../images/facebook.svg';
+import image from '../images/raquette.jpg';
 ---
+
 <LayoutPages pageTitle="Contact" srcImage={backgroundImage.src}>
-    <div class="flex flex-col gap-2 gap-10 py-10">
-        <div class="flex flex-col lg:flex-row px-10 lg:px-20 gap-4 lg:gap-10">
-            <div class="flex flex-col gap-4 justify-center">
-                <h2 class="text-red-700">Rejoignez-vous sur Facebook</h2>
-                <p>Vous y trouverez les dernières informations sur le club, et pourrez poser vos questions ! Les membres du club pourront vous répondre !</p>
-            </div>
-            <a href="https://facebook.com/groups/LTYPongiste" target="_blank" class="flex flex-col border-2 border-blue-500 rounded-md px-20 items-center justify-center hover:bg-blue-50">
-                <img class="w-45 h-10 rounded-md" src={facebookImage.src}>
-                <p class="text-blue-500 font-medium">LTYPongiste</p>
-            </a>
-        </div>
-        <div class="flex flex-col gap-4 px-10 lg:px-20">
-            <h2 class="text-red-700">Contactez-nous par mail</h2>
-            <p>Vous souhaitez nous rejoindre ? Vous avez une question concernant notre club ? N'hésitez pas à nous contacter en nous envoyant un mail à l'adresse <span class="font-bold">ltyp@laposte.net</span>, nous vous répondrons dans les plus brefs délais !</p>
-        </div>
-        <img src={image.src} class="px-50 hidden md:block" alt="Raquette de tennis de table"/>
-        <!-- <div class="flex px-10 lg:px-20">
+  <div class="flex flex-col gap-2 gap-10 py-10">
+    <div class="flex flex-col lg:flex-row px-10 lg:px-20 gap-4 lg:gap-10">
+      <div class="flex flex-col gap-4 justify-center">
+        <h2 class="text-red-700">Rejoignez-vous sur Facebook</h2>
+        <p>
+          Vous y trouverez les dernières informations sur le club, et pourrez
+          poser vos questions ! Les membres du club pourront vous répondre !
+        </p>
+      </div>
+      <a
+        href="https://facebook.com/groups/LTYPongiste"
+        target="_blank"
+        class="flex flex-col border-2 border-blue-500 rounded-md px-20 items-center justify-center hover:bg-blue-50"
+      >
+        <img class="w-45 h-10 rounded-md" src={facebookImage.src} />
+        <p class="text-blue-500 font-medium">LTYPongiste</p>
+      </a>
+    </div>
+    <div class="flex flex-col gap-4 px-10 lg:px-20">
+      <h2 class="text-red-700">Contactez-nous par mail</h2>
+      <p>
+        Vous souhaitez nous rejoindre ? Vous avez une question concernant notre
+        club ? N'hésitez pas à nous contacter en nous envoyant un mail à
+        l'adresse <span class="font-bold">ltyp@laposte.net</span>, nous vous
+        répondrons dans les plus brefs délais !
+      </p>
+    </div>
+    <img
+      src={image.src}
+      class="px-50 hidden md:block"
+      alt="Raquette de tennis de table"
+    />
+    <!-- <div class="flex px-10 lg:px-20">
             <div class="flex items-center justify-center flex-1 hidden lg:flex">
                 <img class="w-45 h-50 rounded-md" src="/logo.png">
             </div>
@@ -48,8 +65,5 @@ import image from "../images/raquette.jpg";
                 <button type="submit" class="bg-red-700 hover:bg-red-900 text-white font-bold py-2 px-4 rounded w-fit self-center cursor-pointer">Envoyer</button>
             </form>
         </div> -->
-    </div>
-</div>
-   
+  </div>
 </LayoutPages>
-

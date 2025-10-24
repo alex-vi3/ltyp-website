@@ -1,29 +1,32 @@
-
 ---
-import { Icon } from "astro-icon/components";
+import { Icon } from 'astro-icon/components';
 ---
 
 <div class="flex flex-col items-center w-full pb-2">
-    <div class="flex justify-between w-full pb-6">
-        <img class="w-22 h-26" src="/logo.png">
-        <Icon name="mdi:menu" class="icon-burger text-5xl text-white cursor-pointer"/>
-    </div>
-   
-    <div class="flex flex-col popover-burger w-full text-white gap-4 items-center
-    transform -translate-y-4 opacity-0 
-    transition-all duration-300 ease-out">
-        <a href="/">ACCUEIL</a>
-        <a href="/actualites">ACTUALITÉS</a>
-        <a href="/entrainements">ENTRAINEMENTS</a>
-        <a href="/competitions">COMPÉTITIONS</a>
-        <a href="/nous-rejoindre">NOUS REJOINDRE</a>
-        <a href="/contact">CONTACT</a>
-    </div>
+  <div class="flex justify-between w-full pb-6">
+    <img class="w-22 h-26" src="/logo.png" />
+    <Icon
+      name="mdi:menu"
+      class="icon-burger text-5xl text-white cursor-pointer"
+    />
+  </div>
+
+  <div
+    class="flex flex-col popover-burger w-full text-white gap-4 items-center
+    transform -translate-y-4 opacity-0
+    transition-all duration-300 ease-out"
+  >
+    <a href="/">ACCUEIL</a>
+    <a href="/actualites">ACTUALITÉS</a>
+    <a href="/entrainements">ENTRAINEMENTS</a>
+    <a href="/competitions">COMPÉTITIONS</a>
+    <a href="/nous-rejoindre">NOUS REJOINDRE</a>
+    <a href="/contact">CONTACT</a>
+  </div>
 </div>
 
-
 <script>
-document.querySelector(".icon-burger")?.addEventListener("click", () => {
-    document.querySelector(".popover-burger")?.classList.toggle("expanded");
-});
+  document.querySelector('.icon-burger')?.addEventListener('click', () => {
+    document.querySelector('.popover-burger')?.classList.toggle('expanded');
+  });
 </script>
