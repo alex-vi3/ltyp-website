@@ -22,13 +22,16 @@
   p,
   td,
   th,
-  li,
   option,
   label,
   select,
   input {
     font-family: 'Inter', sans-serif;
     font-size: var(--text-sm);
+  }
+  li {
+    font-family: 'Inter', sans-serif;
+    font-size: var(--text-md);
   }
 
   /* Override pour desktop (breakpoint lg)*/

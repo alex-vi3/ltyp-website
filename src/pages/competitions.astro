@@ -5,6 +5,8 @@ import LayoutPages from '../layouts/LayoutPages.astro';
 import backgroundCompetition from '../images/competition-background.jpg';
 import imageEquipe1 from '../images/equipe1.jpg';
 import imageEquipe2 from '../images/equipe2.jpg';
+import imageEquipe4 from '../images/equipe4.jpg';
+import imageEquipe5 from '../images/equipe5.jpg';
 import imageEquipeFem from '../images/equipe-fem.jpg';
 import image from '../images/raquette-5.png';
 ---
@@ -24,14 +26,15 @@ import image from '../images/raquette-5.png';
       <CompetitionTeam
         number={1}
         srcImage={imageEquipe1.src}
-        division="Régional 2"
-        composition={['Jeremy', 'Alain', 'David', 'Samuel', 'Jordan']}
+        division="R2"
+        composition={['Alain', 'David', 'Samuel', 'Jordan']}
       />
       <CompetitionTeam
         number={2}
         srcImage={imageEquipe2.src}
-        division="Départemental 1"
+        division="D1"
         composition={[
+          'Jeremy',
           'Alexandre',
           'Patrick Fo.',
           'Guillaume',
@@ -41,27 +44,34 @@ import image from '../images/raquette-5.png';
       />
       <CompetitionTeam
         number={3}
-        division="Départemental 3"
-        composition={['Denis, Thierry, Franck, Ludovic, Patrick Ch.']}
+        division="D3"
+        composition={['Denis', 'Thierry', 'Franck', 'Ludovic', 'Patrick Ch.']}
       />
       <CompetitionTeam
         number={4}
-        division="Départemental 4"
+        srcImage={imageEquipe4.src}
+        division="D4"
         composition={[
-          'Romane, Stéphane, Mickael, Enzo, Nathan, Louane',
+          'Romane',
+          'Stéphane',
+          'Nathan',
+          'Louane',
           'Jacky',
+          'Patricia',
+          'Cyril',
         ]}
       />
       <CompetitionTeam
         number={5}
-        division="Départemental 4"
+        srcImage={imageEquipe5.src}
+        division="D4"
         composition={[
           'Céline',
           'Dylan',
-          'Valentino',
           'Nathalie',
           'Claudine',
           'Maurice',
+          'Emilienne',
         ]}
       />
       <CompetitionTeam
