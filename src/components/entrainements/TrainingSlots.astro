@@ -1,0 +1,48 @@
+---
+import CardTraining from './CardTraining.astro';
+import image from '../../images/raquette-4.webp';
+---
+
+<div class=`flex flex-col gap-6 px-10 lg:px-20`>
+  <h2 class="text-red-700">Plusieurs créneaux</h2>
+  <div class="flex flex-col lg:flex-row gap-10 items-center justify-between">
+    <CardTraining
+      title="Jeunes 7 - 17 ans"
+      location="Yainville"
+      coach="Yannick"
+      day="mardis"
+      time="18h - 19h30"
+    />
+    <CardTraining
+      title="Adultes"
+      location="Yainville"
+      coach="Yannick"
+      day="mardis"
+      time="19h30 - 21h30"
+    />
+    <CardTraining
+      title="Ouvert à tous"
+      location="Le Trait"
+      coach="Alain"
+      day="jeudis"
+      time="19h15 - 21h15"
+    />
+  </div>
+  <div class="flex relative py-10 my-10">
+    <div class="flex flex-col gap-2 bg-gray-100 p-4 lg:p-10 flex-1 rounded-md">
+      <p>L'entraînement du jeudi est plus adapté aux débutants.</p>
+      <p>
+        Il est possible sur toutes les séances d'entraînements de pratiquer du
+        jeu libre.
+      </p>
+      <p>
+        La salle est également ouverte sur d'autres créneaux occasionnellement.
+      </p>
+    </div>
+    <img
+      src={image.src}
+      class="absolute w-100 h-70 -right-10 -top-5 hidden lg:block"
+      alt="Raquette de tennis de table"
+    />
+  </div>
+</div>

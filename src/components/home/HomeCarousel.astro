@@ -1,8 +1,7 @@
 ---
-import LayoutPages from '../layouts/LayoutPages.astro';
-import backgroundImage from '../images/raquette3.webp';
+import CarouselItem from '../CarouselItem.astro';
+import Carousel from '../Carousel.astro';
 import { getCollection } from 'astro:content';
-import { ArticlesList } from '../components/actualites/ArticlesList';
 
 const articles = await getCollection('actualites');
 
@@ -15,6 +14,10 @@ const sortedArticles = articles.sort((article1, article2) => {
 });
 ---
 
-<LayoutPages pageTitle="Actualités" srcImage={backgroundImage.src}>
-  <ArticlesList articles={sortedArticles} client:load />
-</LayoutPages>
+<Carousel title="Dernières actualités">
+  {
+    sortedArticles
+      .slice(0, 4)
+      .map((article) => <CarouselItem article={article.data} id={article.id} />)
+  }
+</Carousel>

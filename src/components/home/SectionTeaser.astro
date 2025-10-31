@@ -1,0 +1,26 @@
+---
+import Button from '../Button.astro';
+
+const { title, description, imageUrl, linkUrl, reverse } = Astro.props;
+---
+
+<div
+  class=`flex flex-col ${reverse ? "md:flex-row-reverse" : "md:flex-row"} items-center w-full 2xl:w-300 px-10 py-10 lg:py-15 2xl:py-20 gap-20 lg:gap-30`
+>
+  <div class="flex flex-col flex-1 gap-5 md:w-[60%]">
+    <h2 class="text-white">{title}</h2>
+    <p class="text-md text-neutral-200">{description}</p>
+    <Button text="Plus d'infos" link={linkUrl} />
+  </div>
+  <div class="relative md:w-[40%]">
+    <div
+      class=`background-pattern-points-red absolute top-[-20px] ${reverse && "left-[-20px]"} ${!reverse &&  "right-[-20px]"}  w-40 h-30 rounded-sm shadow-2xl shadow-black`
+    >
+    </div>
+    <div
+      class=`background-pattern-points-red absolute bottom-[-20px] ${reverse && "right-[-20px]"} ${!reverse && "left-[-20px]"} w-40 h-30 rounded-sm shadow-2xl shadow-black`
+    >
+    </div>
+    <img class="lg:max-h-120 relative rounded-md" src={imageUrl} />
+  </div>
+</div>
