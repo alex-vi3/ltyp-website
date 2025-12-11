@@ -8,9 +8,10 @@ image:
 tag: competitions
 ---
 
-Pour cette première phase, notre équipe féminine évoluait en D1, avec pour objectif de se mêler avec les meilleures équipes départementales, mais surtout de prendre du plaisir ! 
+Pour cette première phase, notre équipe féminine évoluait en D1 avec l’objectif de rivaliser avec les meilleures équipes départementales, mais surtout de prendre du plaisir !
 
-Suite à une saison où elle auront été régulières (3 victoires et un nul avant le dernier match) malgré beaucoup de turnovers, la première place de la poule se jouait contre Neufchâtel le samedi 6 décembre. Et alors qu'elle ne partaient pas favorites face à une belle équipe, les filles ont su se surpasser et s'imposer largement sur le score de 7-3, synonyme de montée en Régional ! A noter les grosses perfs de Romane et Émilienne contre une 620, qui auront été décisifs pour la victoire. 
+Après une saison régulière (3 victoires et un nul avant le dernier match) malgré de nombreux turnovers, la première place de la poule se jouait face à Neufchâtel le samedi 6 décembre. Bien qu’elles ne partaient pas favorites contre une très belle équipe, les filles ont su se surpasser et s’imposer largement 7-3, validant ainsi leur montée en Régional !
 
+À noter les très belles performances de Romane et Émilienne contre une joueuse classée 620, qui ont été décisives dans cette victoire.
 
-Félicitiations à Nathalie, Louane, Claudine, Romane, Émilienne et leur capitaine Céline pour cette montée ! Le Trait Yainville Pongiste sera bien représenté au niveau régional avec nos joueuses, et est fier de compter 25% de licenciés féminines dans le club. 
+Félicitations à Nathalie, Louane, Claudine, Romane, Émilienne et à leur capitaine Céline pour cette superbe montée ! Le Trait Yainville Pongiste sera fièrement représenté au niveau régional, et le club est ravi de compter 25 % de licenciées féminines.
