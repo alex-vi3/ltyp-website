@@ -1,8 +1,8 @@
 ---
-const { title, description } = Astro.props;
+const { title, description, ...rest } = Astro.props;
 ---
 
-<div class="border-l-2 border-l-solid pl-2 border-red-700">
+<div class="border-l-2 border-l-solid pl-2 border-red-700" {...rest}>
   <h2 class="text-xl text-red-700">{title}</h2>
   <p class="text-gray-700">{description}</p>
 </div>

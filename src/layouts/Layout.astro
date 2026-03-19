@@ -3,10 +3,11 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import HomeBurger from '../components/home/HomeBurger.astro';
 import '../styles/global.css';
+import scrollRevealUrl from '../scripts/scroll-reveal.ts?url';
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
@@ -29,5 +30,6 @@ import '../styles/global.css';
     </div>
     <slot />
     <Footer />
+    <script type="module" src={scrollRevealUrl}></script>
   </body>
 </html>

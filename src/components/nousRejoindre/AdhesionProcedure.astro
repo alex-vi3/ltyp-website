@@ -2,9 +2,14 @@
 import AdhesionRates from './AdhesionRates.astro';
 import DocumentLink from '../DocumentLink.astro';
 import image from '../../images/balle-rebond.webp';
+
+const { ...rest } = Astro.props;
 ---
 
-<div class="flex flex-col bg-gray-100 p-10 lg:p-20 gap-10 items-center">
+<div
+  class="flex flex-col bg-gray-100 p-10 lg:p-20 gap-10 items-center"
+  {...rest}
+>
   <div class="flex items-center justify-center gap-4">
     <h2 class="text-red-700">Processus d'inscription</h2>
     <img

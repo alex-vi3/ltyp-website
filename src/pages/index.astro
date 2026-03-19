@@ -27,13 +27,16 @@ import CardData from '../components/home/CardData.astro';
         imageUrl={entrainementImage.src}
         linkUrl="/entrainements"
         reverse
+        data-scroll-reveal
       />
       <SectionTeaser
         title="Des équipes à tous niveaux"
-        description="Le club engage chaque année plusieurs équipes au niveau départemental et régional, pour que chacun des licenciés puisse évoluer à son niveau. Nos jeunes participent au championnat jeune, et une équipe féminime évolue en D1."
+        description="Le club engage chaque année plusieurs équipes au niveau départemental et régional, pour que chacun des licenciés puisse évoluer à son niveau. Nos jeunes participent au championnat jeune, et une équipe féminime évolue en R1."
         imageUrl={competitionImage.src}
         linkUrl="/competitions"
+        data-scroll-reveal
       />
+
       <div class="flex px-10 lg:px-10 py-20 bg-white w-full justify-center">
         <div
           class="flex flex-col lg:flex-row w-full lg:w-300 gap-20 justify-center"
@@ -41,14 +44,19 @@ import CardData from '../components/home/CardData.astro';
           <CardData
             title="Plus de 75 licenciés"
             description="dont 45 participant aux compétitions"
+            data-scroll-reveal
           />
           <CardData
             title="6 équipes engagées"
             description="dans les championnats régionaux et départementaux"
+            data-scroll-reveal
+            data-scroll-reveal-delay="200"
           />
           <CardData
             title="2 équipes jeunes"
             description="inscrites au championnat jeune"
+            data-scroll-reveal
+            data-scroll-reveal-delay="400"
           />
         </div>
       </div>

@@ -22,19 +22,18 @@ import image from '../images/raquette-5.webp';
         alt="Raquette de tennis de table"
       />
     </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-20" data-scroll-reveal>
       <CompetitionTeam
         number={1}
         srcImage={imageEquipe1.src}
         division="R2"
-        composition={['Alain', 'David', 'Samuel', 'Jordan']}
+        composition={['Alain', 'David', 'Samuel', 'Jordan', 'Jeremy']}
       />
       <CompetitionTeam
         number={2}
         srcImage={imageEquipe2.src}
         division="D1"
         composition={[
-          'Jeremy',
           'Alexandre',
           'Patrick Fo.',
           'Guillaume',
@@ -56,9 +55,9 @@ import image from '../images/raquette-5.webp';
           'Stéphane',
           'Nathan',
           'Louane',
-          'Jacky',
-          'Patricia',
           'Cyril',
+          'Quentin',
+          'Sophie',
         ]}
       />
       <CompetitionTeam
@@ -70,7 +69,6 @@ import image from '../images/raquette-5.webp';
           'Dylan',
           'Nathalie',
           'Claudine',
-          'Maurice',
           'Emilienne',
           'Enzo',
           'Mickael',

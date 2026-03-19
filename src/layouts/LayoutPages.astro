@@ -4,12 +4,13 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PageTitle from '../components/PageTitle.astro';
 import '../styles/global.css';
+import scrollRevealUrl from '../scripts/scroll-reveal.ts?url';
 
 const { pageTitle, srcImage } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,7 +22,7 @@ const { pageTitle, srcImage } = Astro.props;
     />
     <link rel="icon" type="image/svg+xml" href="/logo.png" />
     <meta name="generator" content={Astro.generator} />
-    <title>Le Trait Yainville Pongiste</title>
+    <title>Le Trait Yainville Pongiste - {pageTitle}</title>
   </head>
   <body>
     <div
@@ -40,5 +41,6 @@ const { pageTitle, srcImage } = Astro.props;
       </div>
     </div>
     <Footer />
+    <script type="module" src={scrollRevealUrl}></script>
   </body>
 </html>
