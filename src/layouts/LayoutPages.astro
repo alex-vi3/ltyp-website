@@ -4,7 +4,7 @@ import Footer from '../components/Footer.astro';
 import Header from '../components/Header.astro';
 import PageTitle from '../components/PageTitle.astro';
 import '../styles/global.css';
-import scrollRevealUrl from '../scripts/scroll-reveal.ts?url';
+import ScrollRevealScript from '../layouts/ScrollRevealScript.astro';
 
 const { pageTitle, srcImage } = Astro.props;
 ---
@@ -41,6 +41,6 @@ const { pageTitle, srcImage } = Astro.props;
       </div>
     </div>
     <Footer />
-    <script type="module" src={scrollRevealUrl}></script>
+    <ScrollRevealScript />
   </body>
 </html>
