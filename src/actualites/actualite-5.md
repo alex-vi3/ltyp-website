@@ -3,7 +3,7 @@ title: Évènements de fin d'année
 pubDate: 2026-06-08T00:00:00.000Z
 author: Alexandre Vigneron
 image:
-  url: /images/Capture d’écran du 2026-06-08 13-30-27.png
+  url: /images/Capture d’écran du 2026-06-08 13-33-47.png
   alt: Evenements fin de saison
 tag: evenements
 ---
