@@ -21,11 +21,12 @@ const { ...rest } = Astro.props;
   <div class="flex flex-col rounded-md gap-10">
     <div class="flex flex-col gap-2">
       <p>
-        Pour que l'adhésion au club soit validé, trois éléments sont requis :
+        Pour que l'adhésion au club soit validé, quatre éléments sont requis :
       </p>
       <ul class="list-disc pl-10 pb-2">
-        <li>Le bordereau d'adhésion</li>
-        <li>Le questionnaire médical ou certificat</li>
+        <li>La fiche d'inscription du club</li>
+        <li>Le bordereau d'adhésion FFTT</li>
+        <li>PPS ou certificat médical</li>
         <li>Le paiement de la licence</li>
       </ul>
       <p>
@@ -37,6 +38,20 @@ const { ...rest } = Astro.props;
     </div>
 
     <div class="flex flex-col gap-2">
+      <h3>Fiche d'inscription du club</h3>
+      <div class="flex flex-col rounded-md gap-2">
+        <p>
+          Disponible à la demande à un membre du bureau sur les différents
+          créneaux d'entrainements ou à télécharger ici :
+        </p>
+        <DocumentLink
+          name="Fiche d'inscription du club"
+          url="/documents/Fiche_Inscription_LTYP_2026-2027.pdf"
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-2">
       <h3>Bordereau d'adhésion</h3>
       <div class="flex flex-col rounded-md gap-2">
         <p>
@@ -45,36 +60,131 @@ const { ...rest } = Astro.props;
         </p>
         <DocumentLink
           name="Bordereau d'adhésion"
-          url="https://www.fftt.com/doc/administratif/documents/25-2-licence.pdf"
+          url="https://www.fftt.com/doc/administratif/documents/26-2-licence.pdf"
         />
       </div>
     </div>
 
     <div class="flex flex-col gap-2">
-      <h3>Questionnaire médical ou certificat</h3>
-      <div class="flex flex-col rounded-md gap-4">
+      <h3>PPS ou certificat médical</h3>
+      <p>
+        Selon votre âge, un certificat médical, valider son PPS (voir section
+        ci-dessous) ou remplir un questionnaire (seulement pour les mineurs) est
+        requis pour valider votre adhésion. Les différentes possibilités selon
+        votre âge sont détaillées ci-dessous.
+      </p>
+      <div class="flex flex-col gap-2">
+        <h4 style="font-family: 'Inter', sans-serif;" class="text-gray-600">
+          Pour les mineurs :
+        </h4>
+        <ul class="list-disc pl-10 pb-2">
+          <li>
+            soit remplir l'auto-questionnaire FFTT 26-10-2 mineur que vous
+            pouvez télécharger ci-dessous ou récupérer pendant les séances
+            d’entraînements (si toutes les réponses au questionnaire sont « NON
+            »)
+          </li>
+
+          <li>
+            soit fournir un certificat médical de non contre-indication à la
+            pratique du tennis de table en compétition
+          </li>
+        </ul>
+        <DocumentLink
+          name="Auto-questionnaire mineur"
+          url="https://www.fftt.com/doc/administratif/documents/26-10-2-autoquestionnaire-medical-mineur.pdf"
+          class="my-2"
+        />
+      </div>
+      <div class="flex flex-col gap-2">
+        <h4 style="font-family: 'Inter', sans-serif;" class="text-gray-600">
+          Pour les personnes de 18 à 64 ans :
+        </h4>
+        <ul class="list-disc pl-10 pb-2">
+          <li>
+            soit remplir et valider son Parcours Prévention Santé (PPS) (voir
+            section ci-dessous)
+          </li>
+          <li>
+            soit fournir un certificat médical de non contre-indication à la
+            pratique du tennis de table en compétition (obligatoire si PPS non
+            validé)
+          </li>
+        </ul>
+      </div>
+
+      <div class="flex flex-col gap-2">
+        <h4 style="font-family: 'Inter', sans-serif;" class="text-gray-600">
+          Pour les personnes de plus de 65 ans :
+        </h4>
+        <ul class="list-disc pl-10 pb-2">
+          <li>
+            soit remplir et valider son Parcours Prévention Santé (PPS) si vous
+            ne changez pas de catégorie vétérans (tous les 5 ans)
+          </li>
+          <li>
+            soit fournir un certificat médical de non contre-indication à la
+            pratique du tennis de table en compétition (obligatoire en cas de
+            changement de catégorie vétéran ou si vous n’avez pas validé le PPS)
+          </li>
+        </ul>
+      </div>
+      <DocumentLink
+        name="Certificat médical"
+        url="https://www.fftt.com/doc/administratif/documents/26-9-certificat.pdf"
+      />
+
+      <div class="flex flex-col gap-2 mt-4">
+        <h4>Qu'est ce que le PPS ?</h4>
         <p>
-          Que vous soyez mineur ou majeur, vous devez remplir un
-          auto-questionnaire de santé selon votre âge (mineur ou majeur). Ce
-          questionnaire est obligatoire et vous permez de savoir si vous devez
-          fournir un certificat médical ou non selon votre état de santé. De
-          plus, si vous êtes vétéran, vous devez obligatoirement tous les 5 ans
-          (à chaque changement de catégorie vétéran) fournir un certificat
-          médical rempli par votre médecin.
+          Il s’agit de la nouvelle évolution du questionnaire médical qui était
+          jusqu’à lors en place. Il est obligatoire pour toutes personnes
+          majeures sauf si un certificat médical est fourni. Les démarches sont
+          à faire entièrement en ligne. Une fois complété, le club sera prévenu
+          et pourra valider votre adhésion.
         </p>
-        <div class="flex flex-col lg:flex-row gap-4">
-          <DocumentLink
-            name="Auto-questionnaire majeur"
-            url="https://www.fftt.com/doc/administratif/documents/25-10-1-autoquestionnaire-medical-majeur.pdf"
-          />
-          <DocumentLink
-            name="Auto-questionnaire mineur"
-            url="https://www.fftt.com/doc/administratif/documents/25-10-2-autoquestionnaire-medical-mineur.pdf"
-          />
-          <DocumentLink
-            name="Certificat médical"
-            url="https://www.fftt.com/doc/administratif/documents/25-9-certificat.pdf"
-          />
+
+        <div>
+          <h4 class="text-gray-600">Tutoriel</h4>
+          <ol class="list-decimal pl-10 pb-2">
+            <li>
+              Se connecter sur
+              <a
+                href="https://malicence.fftt.com/login/"
+                class="font-normal text-sm text-blue-500"
+                style="font-family: 'Inter', sans-serif;"
+                target="_blank"
+              >
+                https://malicence.fftt.com/login/
+              </a>
+              avec l’adresse email transmise au club (si vous nous l'avez déjà transmise
+              les années précédentes), sinon créez-vous un compte
+            </li>
+            <li>Cliquer sur l’onglet PPS dans l’Espace Licencié.</li>
+            <li>
+              Vérifier ses informations personnelles et le type de licence
+              souhaité.
+            </li>
+            <li>
+              Lire ou écouter attentivement les informations de prévention.
+            </li>
+            <li>Valider le parcours si aucun symptôme n’est signalé.</li>
+            <li>
+              Télécharger l’attestation PPS si vous êtres un nouveau licencié,
+              sinon nous la retrouverons directement.
+            </li>
+          </ol>
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <h4 class="text-gray-600">Tutoriel vidéo</h4>
+          <div class="relative w-full aspect-video">
+            <iframe
+              class="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/JuIKNZKWKG8"
+              title="Tutoriel - Suivre et valider son PPS en ligne"
+              allowfullscreen></iframe>
+          </div>
         </div>
       </div>
     </div>

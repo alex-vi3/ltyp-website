@@ -16,7 +16,11 @@
     font-size: var(--text-md);
   }
   h4 {
-    font-family: 'Special Gothic Expanded One', sans-serif;
+    font-size: var(--text-sm);
+    font-weight: 700;
+  }
+  h5 {
+    font-weight: 700;
     font-size: var(--text-sm);
   }
   p,
@@ -45,7 +49,7 @@
     h3 {
       font-size: var(--text-lg);
     }
-    h3 {
+    h4 {
       font-size: var(--text-md);
     }
     p {
