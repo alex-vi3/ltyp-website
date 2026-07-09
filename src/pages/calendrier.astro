@@ -1,0 +1,85 @@
+---
+import LayoutPages from '../layouts/LayoutPages.astro';
+import backgroundImage from '../images/raquette3.webp';
+---
+
+<LayoutPages pageTitle="Calendrier" srcImage={backgroundImage.src}>
+  <div class="flex flex-col gap-10">
+    <div id="calendar" class="w-full bg-white rounded-md p-4 shadow-md"></div>
+  </div>
+</LayoutPages>
+
+<script>
+  import { Calendar } from '@fullcalendar/core';
+  import frLocale from '@fullcalendar/core/locales/fr';
+  import dayGridPlugin from '@fullcalendar/daygrid';
+  import timeGridPlugin from '@fullcalendar/timegrid';
+  import listPlugin from '@fullcalendar/list';
+  import googleCalendarPlugin from '@fullcalendar/google-calendar';
+
+  // Couleur d'un événement selon le type déduit de son titre.
+  const eventColors = [
+    { match: 'match', color: '#b91c1c' }, // Rouge club
+    { match: 'entraînement', color: '#000000' }, // Noir
+    { match: 'animation', color: '#0b8043' }, // Noir
+  ];
+
+  const calendarEl = document.getElementById('calendar');
+
+  if (calendarEl) {
+    // En dessous de cette largeur (px), on affiche la vue planning (liste).
+    const MOBILE_BREAKPOINT = 1024;
+    const isMobile = () => window.innerWidth < MOBILE_BREAKPOINT;
+
+    const calendar = new Calendar(calendarEl, {
+      plugins: [
+        dayGridPlugin,
+        timeGridPlugin,
+        listPlugin,
+        googleCalendarPlugin,
+      ],
+      locale: frLocale,
+      timeZone: 'Europe/Paris',
+      initialView: isMobile() ? 'listMonth' : 'timeGridWeek',
+      firstDay: 1,
+      nowIndicator: true,
+      height: 'auto',
+      headerToolbar: {
+        left: isMobile() ? undefined : 'prev,next today',
+        center: 'title',
+        right: isMobile() ? undefined : 'dayGridMonth,timeGridWeek,listMonth',
+      },
+      slotMinTime: '08:00:00',
+      slotMaxTime: '23:00:00',
+      googleCalendarApiKey: import.meta.env.PUBLIC_GOOGLE_CALENDAR_API_KEY,
+      events: {
+        googleCalendarId: 'ltyp@laposte.net',
+      },
+      eventDataTransform: (event) => {
+        const title = (event.title ?? '').toLowerCase();
+        console.log('title', title);
+        const found = eventColors.find(({ match }) => title.startsWith(match));
+        if (found) {
+          event.backgroundColor = found.color;
+          event.borderColor = found.color;
+          event.textColor = '#ffffff';
+        }
+        return event;
+      },
+      windowResize: () => {
+        const target = isMobile() ? 'listMonth' : 'timeGridWeek';
+        if (calendar.view.type !== target) {
+          calendar.changeView(target);
+        }
+      },
+    });
+
+    calendar.render();
+  }
+</script>
+
+<style is:global>
+  .fc-event {
+    border-radius: 4px;
+  }
+</style>

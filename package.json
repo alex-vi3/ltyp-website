@@ -15,6 +15,11 @@
   "dependencies": {
     "@astrojs/preact": "^4.1.0",
     "@astrojs/react": "^4.3.0",
+    "@fullcalendar/core": "^6.1.21",
+    "@fullcalendar/daygrid": "^6.1.21",
+    "@fullcalendar/google-calendar": "^6.1.21",
+    "@fullcalendar/list": "^6.1.21",
+    "@fullcalendar/timegrid": "^6.1.21",
     "@tailwindcss/vite": "^4.1.11",
     "@tinacms/cli": "^1.10.3",
     "astro": "^5.12.0",
