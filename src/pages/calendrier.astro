@@ -3,19 +3,26 @@ import LayoutPages from '../layouts/LayoutPages.astro';
 import backgroundImage from '../images/raquette3.webp';
 ---
 
-<LayoutPages pageTitle="Calendrier" srcImage={backgroundImage.src}>
+<LayoutPages pageTitle="Calendrier" srcImage={backgroundImage.src} wide>
   <div class="flex flex-col gap-10">
     <div id="calendar" class="w-full bg-white rounded-md p-4 shadow-md"></div>
   </div>
 </LayoutPages>
 
 <script>
-  import { Calendar } from '@fullcalendar/core';
-  import frLocale from '@fullcalendar/core/locales/fr';
-  import dayGridPlugin from '@fullcalendar/daygrid';
-  import timeGridPlugin from '@fullcalendar/timegrid';
-  import listPlugin from '@fullcalendar/list';
+  import { Calendar } from 'fullcalendar';
+  import type { CalendarOptions } from 'fullcalendar';
+  import type { EventInput } from 'fullcalendar';
+  import frLocale from 'fullcalendar/locales/fr';
+  import dayGridPlugin from 'fullcalendar/daygrid';
+  import timeGridPlugin from 'fullcalendar/timegrid';
+  import listPlugin from 'fullcalendar/list';
+  import themePlugin from 'fullcalendar/themes/classic';
   import googleCalendarPlugin from '@fullcalendar/google-calendar';
+  import type { GoogleCalendarOptions } from '@fullcalendar/google-calendar';
+  import 'fullcalendar/skeleton.css';
+  import 'fullcalendar/themes/classic/theme.css';
+  import 'fullcalendar/themes/classic/palette.css';
 
   // Couleur d'un événement selon le type déduit de son titre.
   const eventColors = [
@@ -30,9 +37,21 @@ import backgroundImage from '../images/raquette3.webp';
     // En dessous de cette largeur (px), on affiche la vue planning (liste).
     const MOBILE_BREAKPOINT = 1024;
     const isMobile = () => window.innerWidth < MOBILE_BREAKPOINT;
+    const getHeaderToolbar = () =>
+      isMobile()
+        ? { center: 'title' }
+        : {
+            start: 'prev,next today',
+            center: 'title',
+            end: 'dayGridMonth,timeGridWeek,listMonth',
+          };
+    const googleCalendarEvents = {
+      googleCalendarId: 'ltyp@laposte.net',
+    };
 
-    const calendar = new Calendar(calendarEl, {
+    const calendarOptions: CalendarOptions & GoogleCalendarOptions = {
       plugins: [
+        themePlugin,
         dayGridPlugin,
         timeGridPlugin,
         listPlugin,
@@ -41,45 +60,51 @@ import backgroundImage from '../images/raquette3.webp';
       locale: frLocale,
       timeZone: 'Europe/Paris',
       initialView: isMobile() ? 'listMonth' : 'timeGridWeek',
+      eventClass: 'calendar-event',
+      eventTitleClass: 'calendar-event-title',
       firstDay: 1,
       nowIndicator: true,
       height: 'auto',
-      headerToolbar: {
-        left: isMobile() ? undefined : 'prev,next today',
-        center: 'title',
-        right: isMobile() ? undefined : 'dayGridMonth,timeGridWeek,listMonth',
-      },
+      headerToolbar: getHeaderToolbar(),
       slotMinTime: '08:00:00',
       slotMaxTime: '23:00:00',
       googleCalendarApiKey: import.meta.env.PUBLIC_GOOGLE_CALENDAR_API_KEY,
-      events: {
-        googleCalendarId: 'ltyp@laposte.net',
-      },
-      eventDataTransform: (event) => {
-        const title = (event.title ?? '').toLowerCase();
-        console.log('title', title);
+      events: googleCalendarEvents,
+      eventDataTransform: (event: EventInput) => {
+        const title = (event.title ?? '').trimStart().toLowerCase();
         const found = eventColors.find(({ match }) => title.startsWith(match));
         if (found) {
-          event.backgroundColor = found.color;
-          event.borderColor = found.color;
-          event.textColor = '#ffffff';
+          event.color = found.color;
+          event.contrastColor = '#ffffff';
         }
         return event;
       },
-      windowResize: () => {
-        const target = isMobile() ? 'listMonth' : 'timeGridWeek';
-        if (calendar.view.type !== target) {
-          calendar.changeView(target);
-        }
-      },
-    });
+    };
+
+    const calendar = new Calendar(calendarEl, calendarOptions);
 
     calendar.render();
+
+    window.addEventListener('resize', () => {
+      const target = isMobile() ? 'listMonth' : 'timeGridWeek';
+      if (calendar.view.type !== target) {
+        calendar.changeView(target);
+        calendar.setOption('headerToolbar', getHeaderToolbar());
+      }
+    });
   }
 </script>
 
 <style is:global>
-  .fc-event {
+  .calendar-event {
     border-radius: 4px;
+  }
+
+  .calendar-event .calendar-event-title {
+    display: block;
+    min-width: 0;
+    overflow-wrap: anywhere;
+    text-overflow: clip;
+    white-space: normal;
   }
 </style>

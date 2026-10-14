@@ -6,7 +6,7 @@ import PageTitle from '../components/PageTitle.astro';
 import '../styles/global.css';
 import ScrollRevealScript from '../layouts/ScrollRevealScript.astro';
 
-const { pageTitle, srcImage } = Astro.props;
+const { pageTitle, srcImage, wide = false } = Astro.props;
 ---
 
 <!doctype html>
@@ -36,7 +36,7 @@ const { pageTitle, srcImage } = Astro.props;
       </div>
     </div>
     <div class="flex flex-col items-center background-pattern-hexa-white">
-      <div class="w-full lg:w-6xl bg-white">
+      <div class={`w-full ${wide ? 'lg:max-w-7xl' : 'lg:w-6xl'} bg-white`}>
         <slot />
       </div>
     </div>

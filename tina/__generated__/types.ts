@@ -7,13 +7,13 @@
     })
     return str
   }
-  export type Maybe<T> = T | null;
-export type InputMaybe<T> = Maybe<T>;
-export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
-export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
-export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
-export type MakeEmpty<T extends { [key: string]: unknown }, K extends keyof T> = { [_ in K]?: never };
+  import type { TinaMarkdownContent } from 'tinacms/dist/rich-text';
+/** Internal type. DO NOT USE DIRECTLY. */
+type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
+/** Internal type. DO NOT USE DIRECTLY. */
 export type Incremental<T> = T | { [P in keyof T]?: P extends ' $fragmentName' | '__typename' ? T[P] : never };
+export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 /** All built-in and custom scalars, mapped to their actual values */
 export type Scalars = {
   ID: { input: string; output: string; }
@@ -24,6 +24,8 @@ export type Scalars = {
   /** References another document, used as a foreign key */
   Reference: { input: any; output: any; }
   JSON: { input: any; output: any; }
+  /** A rich-text document, renderable by TinaMarkdown */
+  RichText: { input: TinaMarkdownContent; output: TinaMarkdownContent; }
 };
 
 export type SystemInfo = {
@@ -178,7 +180,7 @@ export type Actualites = Node & Document & {
   author?: Maybe<Scalars['String']['output']>;
   image?: Maybe<ActualitesImage>;
   tag?: Maybe<Scalars['String']['output']>;
-  body?: Maybe<Scalars['JSON']['output']>;
+  body?: Maybe<Scalars['RichText']['output']>;
   id: Scalars['ID']['output'];
   _sys: SystemInfo;
   _values: Scalars['JSON']['output'];
@@ -315,29 +317,71 @@ export type ActualitesMutation = {
   author?: InputMaybe<Scalars['String']['input']>;
   image?: InputMaybe<ActualitesImageMutation>;
   tag?: InputMaybe<Scalars['String']['input']>;
-  body?: InputMaybe<Scalars['JSON']['input']>;
+  body?: InputMaybe<Scalars['RichText']['input']>;
 };
 
-export type ActualitesPartsFragment = { __typename: 'Actualites', title?: string | null, pubDate?: string | null, author?: string | null, tag?: string | null, body?: any | null, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null };
+export type StringFilter = {
+  startsWith?: string | null | undefined;
+  eq?: string | null | undefined;
+  exists?: boolean | null | undefined;
+  in?: Array<string | null | undefined> | null | undefined;
+};
+
+export type DatetimeFilter = {
+  after?: string | null | undefined;
+  before?: string | null | undefined;
+  eq?: string | null | undefined;
+  exists?: boolean | null | undefined;
+  in?: Array<string | null | undefined> | null | undefined;
+};
+
+export type ImageFilter = {
+  startsWith?: string | null | undefined;
+  eq?: string | null | undefined;
+  exists?: boolean | null | undefined;
+  in?: Array<string | null | undefined> | null | undefined;
+};
+
+export type ActualitesImageFilter = {
+  url?: ImageFilter | null | undefined;
+  alt?: StringFilter | null | undefined;
+};
+
+export type RichTextFilter = {
+  startsWith?: string | null | undefined;
+  eq?: string | null | undefined;
+  exists?: boolean | null | undefined;
+};
+
+export type ActualitesFilter = {
+  title?: StringFilter | null | undefined;
+  pubDate?: DatetimeFilter | null | undefined;
+  author?: StringFilter | null | undefined;
+  image?: ActualitesImageFilter | null | undefined;
+  tag?: StringFilter | null | undefined;
+  body?: RichTextFilter | null | undefined;
+};
+
+export type ActualitesPartsFragment = { __typename: 'Actualites', title: string | null, pubDate: string | null, author: string | null, tag: string | null, body: TinaMarkdownContent | null, image: { __typename: 'ActualitesImage', url: string | null, alt: string | null } | null };
 
 export type ActualitesQueryVariables = Exact<{
-  relativePath: Scalars['String']['input'];
+  relativePath: string;
 }>;
 
 
-export type ActualitesQuery = { __typename?: 'Query', actualites: { __typename: 'Actualites', id: string, title?: string | null, pubDate?: string | null, author?: string | null, tag?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null } };
+export type ActualitesQuery = { actualites: { __typename: 'Actualites', id: string, title: string | null, pubDate: string | null, author: string | null, tag: string | null, body: TinaMarkdownContent | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image: { __typename: 'ActualitesImage', url: string | null, alt: string | null } | null } };
 
 export type ActualitesConnectionQueryVariables = Exact<{
-  before?: InputMaybe<Scalars['String']['input']>;
-  after?: InputMaybe<Scalars['String']['input']>;
-  first?: InputMaybe<Scalars['Float']['input']>;
-  last?: InputMaybe<Scalars['Float']['input']>;
-  sort?: InputMaybe<Scalars['String']['input']>;
-  filter?: InputMaybe<ActualitesFilter>;
+  before?: string | null | undefined;
+  after?: string | null | undefined;
+  first?: number | null | undefined;
+  last?: number | null | undefined;
+  sort?: string | null | undefined;
+  filter?: ActualitesFilter | null | undefined;
 }>;
 
 
-export type ActualitesConnectionQuery = { __typename?: 'Query', actualitesConnection: { __typename?: 'ActualitesConnection', totalCount: number, pageInfo: { __typename?: 'PageInfo', hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges?: Array<{ __typename?: 'ActualitesConnectionEdges', cursor: string, node?: { __typename: 'Actualites', id: string, title?: string | null, pubDate?: string | null, author?: string | null, tag?: string | null, body?: any | null, _sys: { __typename?: 'SystemInfo', filename: string, basename: string, hasReferences?: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image?: { __typename: 'ActualitesImage', url?: string | null, alt?: string | null } | null } | null } | null> | null } };
+export type ActualitesConnectionQuery = { actualitesConnection: { totalCount: number, pageInfo: { hasPreviousPage: boolean, hasNextPage: boolean, startCursor: string, endCursor: string }, edges: Array<{ cursor: string, node: { __typename: 'Actualites', id: string, title: string | null, pubDate: string | null, author: string | null, tag: string | null, body: TinaMarkdownContent | null, _sys: { filename: string, basename: string, hasReferences: boolean | null, breadcrumbs: Array<string>, path: string, relativePath: string, extension: string }, image: { __typename: 'ActualitesImage', url: string | null, alt: string | null } | null } | null } | null> | null } };
 
 export const ActualitesPartsFragmentDoc = gql`
     fragment ActualitesParts on Actualites {
@@ -479,5 +523,7 @@ export const queries = (
   const requester = generateRequester(client)
   return getSdk(requester)
 }
+
+export type { Exact };
 
   

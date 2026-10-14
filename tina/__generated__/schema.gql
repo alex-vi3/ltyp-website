@@ -5,6 +5,9 @@ scalar Reference
 """"""
 scalar JSON
 
+"""A rich-text document, renderable by TinaMarkdown"""
+scalar RichText
+
 type SystemInfo {
   filename: String!
   title: String
@@ -98,7 +101,7 @@ type Actualites implements Node & Document {
   author: String
   image: ActualitesImage
   tag: String
-  body: JSON
+  body: RichText
   id: ID!
   _sys: SystemInfo!
   _values: JSON!
@@ -187,7 +190,7 @@ input ActualitesMutation {
   author: String
   image: ActualitesImageMutation
   tag: String
-  body: JSON
+  body: RichText
 }
 
 schema {
