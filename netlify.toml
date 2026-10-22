@@ -1,0 +1,4 @@
+[build]
+  # Install dependencies when they are missing (e.g. deploys from a fresh workspace)
+  command = "([ -x node_modules/.bin/tinacms ] || npm ci) && npm run build"
+  publish = "dist"
