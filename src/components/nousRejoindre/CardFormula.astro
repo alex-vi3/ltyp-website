@@ -17,7 +17,7 @@ const { title, offers, price } = Astro.props;
     {
       offers.map((offer: string) => (
         <div class="flex items-center gap-2">
-          <Icon name="mdi:check" />
+          <Icon name="mdi:check" class="size-6 shrink-0" />
           <p>{offer}</p>
         </div>
       ))

@@ -29,6 +29,9 @@ import backgroundImage from '../images/raquette3.webp';
     { match: 'match', color: '#b91c1c' }, // Rouge club
     { match: 'entraînement', color: '#000000' }, // Noir
     { match: 'animation', color: '#0b8043' }, // Noir
+    { match: 'assemblée', color: '#eb7134' }, // Jaune
+    { match: 'tournoi', color: '#695247' }, // Bleu
+    { match: 'repas', color: '#3deb34' }, // Vert
   ];
 
   const calendarEl = document.getElementById('calendar');
@@ -79,6 +82,32 @@ import backgroundImage from '../images/raquette3.webp';
         }
         return event;
       },
+      eventDidMount: (info) => {
+        const location = info.event.extendedProps.location;
+        const titleEl = info.el.querySelector(
+          '.calendar-event-title, .fc-event-title, .fc-list-event-title'
+        );
+        if (typeof location !== 'string' || !location.trim() || !titleEl)
+          return;
+
+        const normalizedLocation = location
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .toLowerCase();
+
+        const commune = normalizedLocation.includes('yainville')
+          ? 'Yainville'
+          : normalizedLocation.includes('trait')
+            ? 'Le Trait'
+            : '';
+
+        if (!commune) return;
+
+        const locationEl = document.createElement('span');
+        locationEl.className = 'calendar-event-location';
+        locationEl.textContent = commune;
+        titleEl.append(locationEl);
+      },
     };
 
     const calendar = new Calendar(calendarEl, calendarOptions);
@@ -106,5 +135,19 @@ import backgroundImage from '../images/raquette3.webp';
     overflow-wrap: anywhere;
     text-overflow: clip;
     white-space: normal;
+  }
+
+  .calendar-event-location {
+    display: block;
+    font-size: 0.8em;
+    overflow-wrap: anywhere;
+  }
+
+  .calendar-event-title,
+  .fc-event-title,
+  .fc-list-event-title,
+  .calendar-event-location {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
   }
 </style>
